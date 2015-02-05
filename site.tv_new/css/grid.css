@@ -8,7 +8,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background: transparent; }
 
 body {
-  line-height: 1; }
+  line-height: 1;
+  }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
@@ -87,6 +88,7 @@ h1.header {
   h1.header {
     font-size: 4rem;
     padding: 0.5rem 0 1rem 0; } }
+
 div.screen {
   background: silver;
   width: 100%;
@@ -219,5 +221,29 @@ h2.feed {
   div.feed.option {
     width: 15%;
     margin: 1rem 2.5%; } }
+
+
+nav {
+    margin: 0;
+    padding: 0.8%;
+    color:white;
+    font-family:geneva, sans-serif;
+    font-size:105%;
+    //position: absolute;
+    text-align:center;
+    position: fixed;
+    width: 100%;
+    //left: -7.5%;
+    //top: 0;
+    z-index: 100;
+    border-top: 0;
+    background-color: black;
+    border-width: 2px;
+    border-color: green;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+}
 
 /*# sourceMappingURL=grid.css.map */
