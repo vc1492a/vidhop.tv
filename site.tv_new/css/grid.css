@@ -246,4 +246,13 @@ nav {
     border-left-style: none;
 }
 
+.searchbox {
+  //color: white;
+  background-color: #f8f8f8;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2%;
+  }
+
 /*# sourceMappingURL=grid.css.map */
