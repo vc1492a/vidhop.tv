@@ -1,0 +1,218 @@
+$back: black;
+$main: silver;
+
+//-----------------------------reset (html5 dr)------------------------------//
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+//------------------------------general-------------------------------------//
+
+body{font-size: 12pt;font-family: 'Fjord One', serif;background:$back;}
+
+.container {width: 100%;margin: 0 auto;max-width: 1200px;
+}
+
+//------------------------------header------------------------------------//
+
+.header{width:98%;margin:0 1%;background:$main;color:black;font-size:0;border-bottom:1px solid black;}
+
+.header-title{width:90%;text-align:center;display:inline-block;font-size:12pt;}
+div.header-title{padding:1em 5%;}
+h1.header-title{font-size:2em;margin-bottom:0.5em;}
+h2.header-title{font-size:1em;font-weight:500;}
+
+.header-logo{display:inline-block;font-size:12pt;}
+img.header-logo{width: 80%; padding: 1em 10%;}
+
+@media (min-width: 550px) {
+  h1.header-title, h2.header-title{display:inline;}
+  h1.header-title {font-size:4em;}
+  div.header-logo{width:20%;vertical-align:bottom;}
+  img.header-logo{padding-top:0.5em;padding-bottom:0.5em;}
+  div.header-title{width:70%;padding:1em 5%;}
+  
+}
+
+@media (min-width: 850px) {}
+
+//-------------------------------nav--------------------------------------//
+
+.placeholder{width:100%;height:2.5em;}
+
+.nav-container-fixed{position:fixed;top:0;font-size:0;width:100%;box-shadow:0px 0px 5px black;background:$back;}
+
+.nav{display:none;}
+a.nav{text-decoration:none;color:black;}
+ul.nav{}
+li.nav{display:inline-block;width:80%;padding:0.5em 5%;margin:0.5em 5%;font-size:12pt;text-align:center;background:$main;}
+li.nav:active, .navicon:active {box-shadow:inset 0 0 6px black;}
+
+.navicon{font-size:12pt;height:1.5em;width:2em;margin: 0.25em 2.5%;padding:0.45em 2.5% 0.25em 2.5%;float:right;}
+.navicon-row{height:0.3em;margin:0 0 0.2em 0;background:$main;}
+.navicon-row:last-child{margin:0;}
+
+
+@media (min-width: 550px) {
+  .placeholder{height:3em;}
+  
+  .navicon{display:none;}
+  .nav{display:block;}
+  
+  li.nav{display:inline-block;width:19.5%;padding:0.5em 2.5%;margin:0.5em 0.25%;font-size:12pt;text-align:center;background:$main;}
+}
+
+.active{box-shadow:inset 0 0 5px black;}
+
+//-------------------------------section-----------------------------------//
+
+.section-title{font-size:2em;text-align:center;margin:0.25em 2.5%;padding:0.25em 2.5%;}
+.section-text{padding:0.25em 2.5%;margin:0.25em 2.5%;}
+
+//-------------------------------grid-------------------------------------//
+/**
+ * Its not mobile first because grid
+ * deal with it.  
+ * **/
+
+.row, .row-spaced {
+  font-size: 0 !important;
+  width:100%;
+  div{font-size: 12pt !important;display: inline-block;min-height: 1em;}
+}
+
+.blocky{
+  width: 100%;
+  background: $main;
+  color: black;
+  vertical-align:top;
+}
+
+.curvy{
+  @extend .blocky;
+  border: 0 solid;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px black;
+}
+
+img.box-fill{width:100%;vertical-align:top;}
+
+div.img-row{border-top: 1px solid black; border-bottom: 1px solid black;}
+
+div.vid-fill{text-align:center;}
+iframe.vid-fill{width:400px;height:300px;margin:0.5em 0;}
+
+@mixin gridwidth($size){width: ($size / 12%) * 100% !important;margin: 0 0 !important;}
+
+@mixin space-gridwidth($size){width: (($size / 12%) * 100%) - 2%; margin: 0.5em 1%;}
+
+.row{ 
+  .box1 {@include gridwidth(1%);}
+  .box2 {@include gridwidth(2%);}
+  .box3 {@include gridwidth(3%);}
+  .box4 {@include gridwidth(4%);}
+  .box5 {@include gridwidth(5%);}
+  .box6 {@include gridwidth(6%);}
+  .box7 {@include gridwidth(7%);}
+  .box8 {@include gridwidth(8%);}
+  .box9 {@include gridwidth(9%);}
+  .box10 {@include gridwidth(10%);}
+  .box11 {@include gridwidth(11%);}
+  .box12 {@include gridwidth(12%);}
+}
+
+.row-spaced{
+  .box1 {@include space-gridwidth(1%);}
+  .box2 {@include space-gridwidth(2%);}
+  .box3 {@include space-gridwidth(3%);}
+  .box4 {@include space-gridwidth(4%);}
+  .box5 {@include space-gridwidth(5%);}
+  .box6 {@include space-gridwidth(6%);}
+  .box7 {@include space-gridwidth(7%);}
+  .box8 {@include space-gridwidth(8%);}
+  .box9 {@include space-gridwidth(9%);}
+  .box10 {@include space-gridwidth(10%);}
+  .box11 {@include space-gridwidth(11%);}
+  .box12 {@include space-gridwidth(12%);}
+}
+
+
+@media (max-width: 850px) {
+  iframe.vid-fill{width: 500px; height: 350px;}
+  
+  .row{ 
+    .box1 {@include gridwidth(2%);}
+    .box2 {@include gridwidth(4%);}
+    .box3 {@include gridwidth(6%);}
+    .box4 {@include gridwidth(8%);}
+    .box5 {@include gridwidth(10%);}
+    .box6 {@include gridwidth(12%);}
+    .box7 {@include gridwidth(12%);}
+    .box8 {@include gridwidth(12%);}
+    .box9 {@include gridwidth(12%);}
+    .box10 {@include gridwidth(12%);}
+    .box11 {@include gridwidth(12%);}
+    .box12 {@include gridwidth(12%);}
+  }
+  
+  .row-spaced{
+    .box1 {@include space-gridwidth(2%);}
+    .box2 {@include space-gridwidth(4%);}
+    .box3 {@include space-gridwidth(6%);}
+    .box4 {@include space-gridwidth(8%);}
+    .box5 {@include space-gridwidth(10%);}
+    .box6 {@include space-gridwidth(12%);}
+    .box7 {@include space-gridwidth(12%);}
+    .box8 {@include space-gridwidth(12%);}
+    .box9 {@include space-gridwidth(12%);}
+    .box10 {@include space-gridwidth(12%);}
+    .box11 {@include space-gridwidth(12%);}
+    .box12 {@include space-gridwidth(12%);}
+  } 
+}
+
+@media (max-width: 550px) {
+  iframe.vid-fill{width: 250px; height: 200px;}
+  
+  .row{ 
+    .box1 {@include gridwidth(6%);}
+    .box2 {@include gridwidth(6%);}
+    .box3 {@include gridwidth(12%);}
+    .box4 {@include gridwidth(12%);}
+    .box5 {@include gridwidth(12%);}
+    .box6 {@include gridwidth(12%);}
+    .box7 {@include gridwidth(12%);}
+    .box8 {@include gridwidth(12%);}
+    .box9 {@include gridwidth(12%);}
+    .box10 {@include gridwidth(12%);}
+    .box11 {@include gridwidth(12%);}
+    .box12 {@include gridwidth(12%);}
+  }
+  
+  .row-spaced{
+    .box1 {@include space-gridwidth(6%);}
+    .box2 {@include space-gridwidth(6%);}
+    .box3 {@include space-gridwidth(12%);}
+    .box4 {@include space-gridwidth(12%);}
+    .box5 {@include space-gridwidth(12%);}
+    .box6 {@include space-gridwidth(12%);}
+    .box7 {@include space-gridwidth(12%);}
+    .box8 {@include space-gridwidth(12%);}
+    .box9 {@include space-gridwidth(12%);}
+    .box10 {@include space-gridwidth(12%);}
+    .box11 {@include space-gridwidth(12%);}
+    .box12 {@include space-gridwidth(12%);}
+  } 
+}

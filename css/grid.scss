@@ -1,5 +1,4 @@
-$back: black;
-$main: silver;
+
 
 //-----------------------------reset (html5 dr)------------------------------//
 
@@ -18,201 +17,79 @@ table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 input,select{vertical-align:middle}
 
-//------------------------------general-------------------------------------//
+//--------------------------------general-------------------------------------//
 
-body{font-size: 12pt;font-family: 'Fjord One', serif;background:$back;}
+body{font-size: 12pt;font-family:'Fjord One',serif;color:white;background-image:url('../img/wood.jpg')}
 
-.container {width: 100%;margin: 0 auto;max-width: 1200px;
-}
+div.container {width:100%;margin:0 auto;}
 
-//------------------------------header------------------------------------//
+//---------------------------------header------------------------------------//
 
-.header{width:98%;margin:0 1%;background:$main;color:black;font-size:0;border-bottom:1px solid black;}
+header.header{height:3rem;}
+h1.header{font-size:2rem;text-align:center;padding:0.5rem 0;}
 
-.header-title{width:90%;text-align:center;display:inline-block;font-size:12pt;}
-div.header-title{padding:1em 5%;}
-h1.header-title{font-size:2em;margin-bottom:0.5em;}
-h2.header-title{font-size:1em;font-weight:500;}
+@media (min-width:550px) {}
 
-.header-logo{display:inline-block;font-size:12pt;}
-img.header-logo{width: 80%; padding: 1em 10%;}
-
-@media (min-width: 550px) {
-  h1.header-title, h2.header-title{display:inline;}
-  h1.header-title {font-size:4em;}
-  div.header-logo{width:20%;vertical-align:bottom;}
-  img.header-logo{padding-top:0.5em;padding-bottom:0.5em;}
-  div.header-title{width:70%;padding:1em 5%;}
-  
-}
-
-@media (min-width: 850px) {}
-
-//-------------------------------nav--------------------------------------//
-
-.placeholder{width:100%;height:2.5em;}
-
-.nav-container-fixed{position:fixed;top:0;font-size:0;width:100%;box-shadow:0px 0px 5px black;background:$back;}
-
-.nav{display:none;}
-a.nav{text-decoration:none;color:black;}
-ul.nav{}
-li.nav{display:inline-block;width:80%;padding:0.5em 5%;margin:0.5em 5%;font-size:12pt;text-align:center;background:$main;}
-li.nav:active, .navicon:active {box-shadow:inset 0 0 6px black;}
-
-.navicon{font-size:12pt;height:1.5em;width:2em;margin: 0.25em 2.5%;padding:0.45em 2.5% 0.25em 2.5%;float:right;}
-.navicon-row{height:0.3em;margin:0 0 0.2em 0;background:$main;}
-.navicon-row:last-child{margin:0;}
-
-
-@media (min-width: 550px) {
-  .placeholder{height:3em;}
-  
-  .navicon{display:none;}
-  .nav{display:block;}
-  
-  li.nav{display:inline-block;width:19.5%;padding:0.5em 2.5%;margin:0.5em 0.25%;font-size:12pt;text-align:center;background:$main;}
-}
-
-.active{box-shadow:inset 0 0 5px black;}
-
-//-------------------------------section-----------------------------------//
-
-.section-title{font-size:2em;text-align:center;margin:0.25em 2.5%;padding:0.25em 2.5%;}
-.section-text{padding:0.25em 2.5%;margin:0.25em 2.5%;}
-
-//-------------------------------grid-------------------------------------//
-/**
- * Its not mobile first because grid
- * deal with it.  
- * **/
-
-.row, .row-spaced {
-  font-size: 0 !important;
-  width:100%;
-  div{font-size: 12pt !important;display: inline-block;min-height: 1em;}
-}
-
-.blocky{
-  width: 100%;
-  background: $main;
-  color: black;
-  vertical-align:top;
-}
-
-.curvy{
-  @extend .blocky;
-  border: 0 solid;
-  border-radius: 5px;
-  box-shadow: 0 0 0 1px black;
-}
-
-img.box-fill{width:100%;vertical-align:top;}
-
-div.img-row{border-top: 1px solid black; border-bottom: 1px solid black;}
-
-div.vid-fill{text-align:center;}
-iframe.vid-fill{width:400px;height:300px;margin:0.5em 0;}
-
-@mixin gridwidth($size){width: ($size / 12%) * 100% !important;margin: 0 0 !important;}
-
-@mixin space-gridwidth($size){width: (($size / 12%) * 100%) - 2%; margin: 0.5em 1%;}
-
-.row{ 
-  .box1 {@include gridwidth(1%);}
-  .box2 {@include gridwidth(2%);}
-  .box3 {@include gridwidth(3%);}
-  .box4 {@include gridwidth(4%);}
-  .box5 {@include gridwidth(5%);}
-  .box6 {@include gridwidth(6%);}
-  .box7 {@include gridwidth(7%);}
-  .box8 {@include gridwidth(8%);}
-  .box9 {@include gridwidth(9%);}
-  .box10 {@include gridwidth(10%);}
-  .box11 {@include gridwidth(11%);}
-  .box12 {@include gridwidth(12%);}
-}
-
-.row-spaced{
-  .box1 {@include space-gridwidth(1%);}
-  .box2 {@include space-gridwidth(2%);}
-  .box3 {@include space-gridwidth(3%);}
-  .box4 {@include space-gridwidth(4%);}
-  .box5 {@include space-gridwidth(5%);}
-  .box6 {@include space-gridwidth(6%);}
-  .box7 {@include space-gridwidth(7%);}
-  .box8 {@include space-gridwidth(8%);}
-  .box9 {@include space-gridwidth(9%);}
-  .box10 {@include space-gridwidth(10%);}
-  .box11 {@include space-gridwidth(11%);}
-  .box12 {@include space-gridwidth(12%);}
+@media (min-width:850px) {
+  header.header{height:5.5rem;}
+  h1.header{font-size:4rem;padding:0.5rem 0 1rem 0;}
 }
 
 
-@media (max-width: 850px) {
-  iframe.vid-fill{width: 500px; height: 350px;}
-  
-  .row{ 
-    .box1 {@include gridwidth(2%);}
-    .box2 {@include gridwidth(4%);}
-    .box3 {@include gridwidth(6%);}
-    .box4 {@include gridwidth(8%);}
-    .box5 {@include gridwidth(10%);}
-    .box6 {@include gridwidth(12%);}
-    .box7 {@include gridwidth(12%);}
-    .box8 {@include gridwidth(12%);}
-    .box9 {@include gridwidth(12%);}
-    .box10 {@include gridwidth(12%);}
-    .box11 {@include gridwidth(12%);}
-    .box12 {@include gridwidth(12%);}
-  }
-  
-  .row-spaced{
-    .box1 {@include space-gridwidth(2%);}
-    .box2 {@include space-gridwidth(4%);}
-    .box3 {@include space-gridwidth(6%);}
-    .box4 {@include space-gridwidth(8%);}
-    .box5 {@include space-gridwidth(10%);}
-    .box6 {@include space-gridwidth(12%);}
-    .box7 {@include space-gridwidth(12%);}
-    .box8 {@include space-gridwidth(12%);}
-    .box9 {@include space-gridwidth(12%);}
-    .box10 {@include space-gridwidth(12%);}
-    .box11 {@include space-gridwidth(12%);}
-    .box12 {@include space-gridwidth(12%);}
-  } 
+//-----------------------------------tv-------------------------------------//
+
+div.screen{background:silver;width:100%;height:350px;display:block;font-size:0rem;vertical-align:top;box-shadow:inset 0 0 5px black;}
+div.main{width:100%;display:inline-block;font-size:12pt;height:100%;background:black;}
+div.arrow{width:50%;display:block;font-size:12pt;height:2rem;text-align:center;}
+div.right{float:right;}
+div.left{float:left;}
+div.arrow:before{content:'';display:inline-block;vertical-align:middle;height:100%;}
+img.arrow{display:inline-block;height:2rem;vertical-align:middle;}
+
+div.arrow:active{box-shadow:inset 0 0 7px black;}
+
+@media (min-width:550px) {
+  div.arrow{width:10%;height:100%;box-shadow:inset 0 0 5px black;}
+  div.arrow:before{content:'';display:inline-block;vertical-align:middle;height:100%;}
+  div.main{width:80%;}
+  img.arrow{display:inline-block;width:100%;height:auto;vertical-align:middle;}
 }
 
-@media (max-width: 550px) {
-  iframe.vid-fill{width: 250px; height: 200px;}
-  
-  .row{ 
-    .box1 {@include gridwidth(6%);}
-    .box2 {@include gridwidth(6%);}
-    .box3 {@include gridwidth(12%);}
-    .box4 {@include gridwidth(12%);}
-    .box5 {@include gridwidth(12%);}
-    .box6 {@include gridwidth(12%);}
-    .box7 {@include gridwidth(12%);}
-    .box8 {@include gridwidth(12%);}
-    .box9 {@include gridwidth(12%);}
-    .box10 {@include gridwidth(12%);}
-    .box11 {@include gridwidth(12%);}
-    .box12 {@include gridwidth(12%);}
-  }
-  
-  .row-spaced{
-    .box1 {@include space-gridwidth(6%);}
-    .box2 {@include space-gridwidth(6%);}
-    .box3 {@include space-gridwidth(12%);}
-    .box4 {@include space-gridwidth(12%);}
-    .box5 {@include space-gridwidth(12%);}
-    .box6 {@include space-gridwidth(12%);}
-    .box7 {@include space-gridwidth(12%);}
-    .box8 {@include space-gridwidth(12%);}
-    .box9 {@include space-gridwidth(12%);}
-    .box10 {@include space-gridwidth(12%);}
-    .box11 {@include space-gridwidth(12%);}
-    .box12 {@include space-gridwidth(12%);}
-  } 
+@media (min-width:850px) {div.screen{height:550px}}
+
+//--------------------------------menu--------------------------------------//
+
+div.menu{width:100%;max-width:1200px;margin:0 auto;font-size:0;}
+div.shr, div.vote{display:block;width:100%;margin:0.5rem 0;vertical-align:top;}
+div.shr{float:right;}
+div.vote{float:left;}
+img.shr{margin:0.25rem 2.5%;width:20%;font-size:12pt;}
+img.vote{margin:0.25rem 5%;width:40%;font-size:12pt;}
+
+.clearfix:after{
+  content:"";
+  display:table;
+  clear:both;}
+
+@media (min-width:550px) {
+  div.shr, div.vote{width:50%;}
+  img.vote{margin:0.25rem 2.5%;width:20%;font-size:12pt;}
 }
+
+@media (min-width:850px) {}
+
+//--------------------------------feed--------------------------------------//
+
+div.feed{width:100%;max-width:1200px;margin:0 auto 0.5rem auto;font-size:0;background:silver;box-shadow:inset 0 0 5px black;}
+div.feed.option{display:inline-block;width:90%;margin:1rem 5%;height:8rem;background:black;}
+h2.feed{font-size:2rem;padding:0.5rem 0;text-align:center;color:black;}
+
+@media (min-width:550px) {div.feed.option{width:15%;margin:1rem 2.5%;}}
+
+@media (min-width:850px) {}
+
+//---------------------------------grid-------------------------------------//
+
+@media (max-width: 550px) {}
+
+@media (max-width: 850px) {}
