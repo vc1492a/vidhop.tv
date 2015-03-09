@@ -47,10 +47,19 @@
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      var idlist = ['IOfAhQ4er20', '5jYbY909Psw', 'mSCnNMrNa98', '42EBDKfSo8U', 'RQO41BNoGj8'];
-	  var listlen = idlist.length;
+      var vids;
       var player;
-      var selection = Math.floor((Math.random() * listlen));
+      var selection = 0;
+      
+      
+      //This gets videoIDs from the server
+      $.ajax({
+  			url: "php/send_ids.php",
+  			success: function(data) {
+  				vids = $.makeArray(JSON.parse(data));
+  			}
+  		});
+      
       
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
@@ -60,7 +69,7 @@
         	
           height: '600',
           width: '1000',
-          videoId: idlist[selection],
+          videoId: vids[selection],
           playerVars: {
           	autoplay: 1,
           	fs: 1,
@@ -76,10 +85,35 @@
         
         function onPlayerStateChange (event) {
         	if (event.data === 0){
-        		selection = Math.floor((Math.random() * listlen));
-        		player.loadVideoById(idlist[selection]);
+        		selection += 1;
+        		player.loadVideoById(vids[selection]);
         	}
         }
+        
+        $('#prev').click( function() {
+        	if (selection == 0) {
+        		selection = vids.length - 1;
+        	}
+        	
+        	else {
+        		selection -= 1;
+        	}
+        	
+        	player.loadVideoById(vids[selection]);
+        });
+        
+        $('#next').click( function() {
+        	if (selection == vids.length - 1) {
+        		selection = 0;
+        	}
+        	
+        	else {
+        		selection += 1;
+        	}
+        	
+        	player.loadVideoById(vids[selection]);
+        });
+        
  	  };
       
       //newVid();
@@ -189,6 +223,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class = "bottonbox">
+    	<button type="button" id = "prev">&lt;</button>
+    	<button type="button" id = "next">&gt;</button>
     </div>
 
 
