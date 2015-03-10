@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"> 
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="superfish" content="nofish">
 
-    <link href='http://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
+    <!--CSS-->
     <link rel="stylesheet" href="css/grid.css">
-  	<link rel="stylesheet" href="css/youtube.css">
-
-    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/youtube.css">
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,300,200,900' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Gloria+Hallelujah|Handlee' rel='stylesheet' type='text/css'>
 
     <!--javascript-->
     <script src="js/jquery.js"></script>
@@ -23,21 +21,31 @@
     <script>
         $(document).ready(function(){
         // Target your .container, .wrapper, .post, etc.
-        $(".player").fitVids();
+        $("#wrapper").fitVids();
         });
+
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="js/base.js"></script>
     <script src="js/search.js"></script>
     <script src="js/auth.js"></script>
 
-  </head>
-  <body>
-  	<!--script for YouTube iframe that the JavaScript code fills-->
-	<!--alternatively we can just create the iframe element ourselves which should decrease loading time-->
-	<!--needs to pull video ID's from database at random-->
-  	<script>
+    <!--jQuery fade on load-->
+    <script>
+
+        $(document).ready(function(){
+            $('#wholething').fadeIn(4000);
+        });
+
+    </script>
+
+</head>
+<body id="wholething">
+<!--script for YouTube iframe that the JavaScript code fills-->
+<!--alternatively we can just create the iframe element ourselves which should decrease loading time-->
+<!--needs to pull video ID's from database at random-->
+<script>
   	
   	
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -148,10 +156,11 @@
       }
       **/
       
-    </script>
 
-    <!--script to scan user ids and then store video ids-->
-    <script>
+</script>
+
+<!--script to scan user ids and then store video ids-->
+<script>
         /**
         setInterval(function () {
 
@@ -166,116 +175,48 @@
         }, 86400000); //triggers daily, in milliseconds
         **/
 
-    </script>
+
+</script>
 
 
-  	<div class="container">
-        <!--[if lt IE 8]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-            <div class="container topnav">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <img class="navbar-brand topnav" src="elements/logo.png">
-                    <a class="navbar-brand topnav" href="index.html">vidhop.tv</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="index.html">home</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">login/sign-up
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="one.html">login</a></li>
-                                <li><a href="two.html">sign-up</a></li>
-                                <!--<li class="divider"></li>-->
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-    </div>
+<div class="container">
+    <!--[if lt IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
 
     <div class="pushdown">
     </div>
 
-    <div class="player">
+    <div class="player" id="wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <div class="screen main player" id = "player">
+                    <div class="screen main player" id="player">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class = "bottonbox">
-    	<button type="button" id = "prev">&lt;</button>
-    	<button type="button" id = "next">&gt;</button>
+    <div class="buttonbox">
+        <a id="prev"><i class="fa fa-angle-left"></i></a>
+        <a id="next"><i class="fa fa-angle-right"></i></a>
+        <!--<button type="button" id="prev">&lt;</button>-->
+        <!--<button type="button" id="next">&gt;</button>-->
     </div>
 
+    <div class="banner">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="bannerimage" src="elements/logoonblack.png">
+                <h1>vidhop.tv</h1><h6>tm</h6>
+            </div>
+        </div>
+    </div>
 
+    <div class="powerbadge">
+        <h4>powered by <i class="fa fa-youtube"></i></h4>
+    </div>
 
-
-
-
-
-
-                    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-        <!--<div class="player" id="player"></div>-->
-
-  		<!--<div class="screen">
-  			<div class="screen main player" id = "player"></div>
-  			<div class="screen arrow left" style="background-color: green;" ><img class="screen arrow" src="img/left_angle_bracket_u3008_icon_256x256.png"></div>
-  			<div class="screen arrow right" style="background-color: green;" ><img class="screen arrow" src="img/right_angle_bracket_u3009_icon_256x256.png"></div>
-  		</div>-->
-
-		<!--
-		<div class="searchbox">
-			<div id="buttons">
-				<label> <input id="query" value='cats' type="text"/><button id="search-button" disabled onclick="search()">Search</button></label></div>
-				<div id="search-container">
-			</div>
-
-			<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-		</div>-->
-
-  		<!--<div class="menu clearfix">
-  			<div class="vote">
-				<img class="vote" id="up" src="img/thumbsup.png">
-				<img class="vote" id="down" src="img/thumbsdown.png">
-  			</div>
-  			<div class="shr">
-  				<img class="shr" id="fb" src="img/facebook.png">
-  				<img class="shr" id="tw" src="img/twitter.png">
-  				<img class="shr" id="rd" src="img/reddit.png">
-  				<img class="shr" id="cm" src="img/email.png">
-  			</div>
-  		</div>
-  		<div class="feed">
-  			<h2 class="feed">Popular</h2>
-  			<div class="feed option"></div>
-  			<div class="feed option"></div>
-  			<div class="feed option"></div>
-  			<div class="feed option"></div>
-  			<div class="feed option"></div>
-  		</div>
-  	</div>-->
-  </body>
-
+</body>
 </html>
