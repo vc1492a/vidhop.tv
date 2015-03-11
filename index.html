@@ -31,25 +31,12 @@
     <script src="js/search.js"></script>
     <script src="js/auth.js"></script>
 
-    <!--jQuery fade on load-->
+    <!--script for YouTube player-->
     <script>
 
-        $(document).ready(function(){
-            $('#wholething').fadeIn(4000);
-        });
 
-    </script>
-
-</head>
-<body id="wholething">
-<!--script for YouTube iframe that the JavaScript code fills-->
-<!--alternatively we can just create the iframe element ourselves which should decrease loading time-->
-<!--needs to pull video ID's from database at random-->
-<script>
-  	
-  	
       // 2. This code loads the IFrame Player API code asynchronously.
-      
+
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -58,8 +45,8 @@
       var vids;
       var player;
       var selection = 0;
-      
-      
+
+
       //This gets videoIDs from the server
       $.ajax({
   			url: "php/send_ids.php",
@@ -67,14 +54,14 @@
   				vids = $.makeArray(JSON.parse(data));
   			}
   		});
-      
-      
+
+
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
-      
+
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-        	
+
           height: '600',
           width: '1000',
           videoId: vids[selection],
@@ -88,53 +75,77 @@
           events: {
           	'onStateChange': onPlayerStateChange,
           },
-          
+
         });
-        
+
         function onPlayerStateChange (event) {
         	if (event.data === 0){
         		selection += 1;
         		player.loadVideoById(vids[selection]);
         	}
         }
-        
+
         $('#prev').click( function() {
         	if (selection == 0) {
         		selection = vids.length - 1;
         	}
-        	
+
         	else {
         		selection -= 1;
         	}
-        	
+
         	player.loadVideoById(vids[selection]);
         });
-        
+
         $('#next').click( function() {
         	if (selection == vids.length - 1) {
         		selection = 0;
         	}
-        	
+
         	else {
         		selection += 1;
         	}
-        	
+
         	player.loadVideoById(vids[selection]);
         });
-        
+
+        $('#prevtext').click( function() {
+        	if (selection == 0) {
+        		selection = vids.length - 1;
+        	}
+
+        	else {
+        		selection -= 1;
+        	}
+
+        	player.loadVideoById(vids[selection]);
+        });
+
+        $('#nexttext').click( function() {
+        	if (selection == vids.length - 1) {
+        		selection = 0;
+        	}
+
+        	else {
+        		selection += 1;
+        	}
+
+        	player.loadVideoById(vids[selection]);
+        });
+
  	  };
-      
+
       //newVid();
-      
-      /**      
+
+      /**
       function onPlayerStateChange(event){
       	alert('hai');
       	if(event.data === 0){
       		alert('hai');
       	}
       };
-      
-      
+
+
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
@@ -155,12 +166,12 @@
         player.stopVideo();
       }
       **/
-      
 
-</script>
 
-<!--script to scan user ids and then store video ids-->
-<script>
+    </script>
+
+    <!--script to scan user ids and then store video ids-->
+    <script>
         /**
         setInterval(function () {
 
@@ -169,15 +180,36 @@
 
             for (i in userlist;
                 //scan for video ids from user ids
-                
+
             }
 
         }, 86400000); //triggers daily, in milliseconds
         **/
 
 
-</script>
+    </script>
 
+    <!--jQuery fade on load-->
+    <script>
+        $(document).ready(function(){
+            $('#wholething').fadeIn(4000);
+        });
+    </script>
+
+    <!--jQuery option bar-->
+    <script>
+        $(document).ready(function() {
+            var optionclick = $('#option');
+            $(optionclick).hide();
+        $('#optionclick').click(function(e) {
+            $(optionclick).slideToggle(700);
+            e.preventDefault();
+            });
+        });
+    </script>
+
+</head>
+<body id="wholething">
 
 <div class="container">
     <!--[if lt IE 8]>
@@ -188,23 +220,61 @@
     <div class="pushdown">
     </div>
 
-    <div class="player" id="wrapper">
+    <div id="wrapper" style="text-align: center;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <div class="screen main player" id="player">
+                    <div class="optionbar" id="optionclick">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="optionmenu" id="option">
+                        <h2>vidhop.tv: discover documentaries, discover our universe, discover yourself.</h2>
+                        <br>
+                        <h2>what</h2>
+                        <h4>vidhop.tv brings quality documentaries from around the web to you.</h4>
+                        <h4>forget searching YouTube for a cool documentary to watch. explore videos with vidhop.tv.</h4>
+                        <br>
+                        <h2>how</h2>
+                        <h4>use the next and previous keys to cycle through documentaries.</h4>
+                        <h4>skipped one you liked? just click the previous key</h4>
+                        <br>
+                        <h2>when</h2>
+                        <h4>24/7. quit waiting for that documentary on cable. </h4>
+                        <h4>we're a website, so drop by whenever you'd like!</h4>
+                        <br>
+                        <h2>there's more?</h2>
+                        <h4>yes! new features are added regularly. come back and discover new ways to enjoy</h4>
+                        <h4>the best documentaries the web has to offer.</h4>
+
+                        <br>
+                        <br>
+                        <br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-0">
+                    <div class="buttonbox">
+                        <a id="prev"><i class="fa fa-angle-left"></i></a>
+                        <h3 id="prevtext">previous</h3>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12 video-container">
+                    <div class="screen main" id="player">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-0">
+                    <div class="buttonbox">
+                        <a id="next"><i class="fa fa-angle-right"></i></a>
+                        <h3 id="nexttext">next</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="buttonbox">
-        <a id="prev"><i class="fa fa-angle-left"></i></a>
-        <a id="next"><i class="fa fa-angle-right"></i></a>
-        <!--<button type="button" id="prev">&lt;</button>-->
-        <!--<button type="button" id="next">&gt;</button>-->
-    </div>
+</div>
 
+<div class="container">
     <div class="banner">
         <div class="row">
             <div class="col-md-12">
@@ -213,10 +283,13 @@
             </div>
         </div>
     </div>
-
     <div class="powerbadge">
         <h4>powered by <i class="fa fa-youtube"></i></h4>
     </div>
+</div>
+
+    <br>
+    <br>
 
 </body>
 </html>

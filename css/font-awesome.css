@@ -726,6 +726,10 @@
 .fa-bars:before {
   content: "\f0c9";
 }
+.fa-bars:hover {
+  content: "\f0c9";
+  color: #e62117;
+}
 .fa-list-ul:before {
   content: "\f0ca";
 }
@@ -903,8 +907,16 @@
 .fa-angle-left:before {
   content: "\f104";
 }
+.fa-angle-left:hover {
+  content: "\f104";
+  color: #e62117;
+}
 .fa-angle-right:before {
   content: "\f105";
+}
+.fa-angle-right:hover {
+  content: "\f105";
+  color: #e62117;
 }
 .fa-angle-up:before {
   content: "\f106";
@@ -1076,6 +1088,10 @@
 }
 .fa-ellipsis-v:before {
   content: "\f142";
+}
+.fa-ellipsis-v:hover {
+  content: "\f142";
+  color: #e62117;
 }
 .fa-rss-square:before {
   content: "\f143";

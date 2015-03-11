@@ -1,9 +1,39 @@
-.player {
-    margin-left: auto; //this usually centers an object but isnt centering the player
-    margin-right: auto; //this usually centers an object but isnt centering the player
-    width: 100%; //this works
+.buttonbox {
+    color: #f8f8f8;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 400;
+    margin-top: 50%;
+    font-size: 130px;
 }
 
-.buttonbox {
-    font-size: 40px;
+.video-container {
+	position:relative;
+	padding-bottom:45%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+	margin-left: auto;
+	margin-right: auto;
+	//text-align: center;
+}
+
+.video-container iframe, .video-container object, .video-container embed .video-container div{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.optionbar {
+    color: #g8g8g8;
+    font-size: 50px;
+}
+
+.optionmenu {
+    color: #f8f8f8;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 400;
 }
