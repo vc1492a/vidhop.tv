@@ -7,6 +7,7 @@
     <meta name="description" content="discover documentaries, discover the universe, discover yourself">
     <meta name="author" content="vidhop.tv">
     <meta name="superfish" content="nofish">
+    <meta name="google-site-verification" content="_tTbdmcNapLtnWT4K6oXAOo_OWnh9iVLCm4A2EMYBfQ" /> <!--for google apps-->
 
     <!--CSS-->
     <link rel="stylesheet" href="css/grid.css">
@@ -69,8 +70,8 @@
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
 
-          height: '600',
-          width: '1000',
+          height: '390',
+          width: '640',
           videoId: vids[selection],
           playerVars: {
           	autoplay: 1,
@@ -206,10 +207,28 @@
     <!--jQuery option bar-->
     <script>
         $(document).ready(function() {
-            var optionclick = $('#option');
-            $(optionclick).hide();
-        $('#optionclick').click(function(e) {
-            $(optionclick).fadeOut(500).dequeue().slideToggle(700);
+            var infoclick = $('#info');
+            $(infoclick).hide();
+        $('#infoclick').click(function(e) {
+            $(infoclick).fadeOut(500).dequeue().slideToggle(700);
+            e.preventDefault();
+            });
+        });
+
+        $(document).ready(function() {
+            var mailclick = $('#mail');
+            $(mailclick).hide();
+        $('#mailclick').click(function(e) {
+            $(mailclick).fadeOut(500).dequeue().slideToggle(700);
+            e.preventDefault();
+            });
+        });
+
+        $(document).ready(function() {
+            var cogclick = $('#cog');
+            $(cogclick).hide();
+        $('#cogclick').click(function(e) {
+            $(cogclick).fadeOut(500).dequeue().slideToggle(700);
             e.preventDefault();
             });
         });
@@ -287,10 +306,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <div class="optionbar" id="optionclick">
-                        <i class="fa fa-bars"></i>
+                    <div class="optionbar">
+                        <i class="fa fa-info-circle" id="infoclick"></i>
+                        <i class="fa fa-envelope-o" id="mailclick"></i>
+                        <i class="fa fa-cogs" id="cogclick"></i>
                     </div>
-                    <div class="optionmenu" id="option">
+                    <div class="infomenu" id="info">
                         <h2>vidhop.tv: discover documentaries, discover our universe, discover yourself.</h2>
                         <br>
                         <h2>what</h2>
@@ -312,9 +333,25 @@
                         <br>
                         <br>
                         <br>
+                    </div>
+                    <div class="mailmenu" id="mail">
+                        <a href="mailto:ts@vidhop.tv">Taylor Stephens</a>: co-founder
+                        <br>
+                        <a href="mailto:vc@vidhop.tv">Valentino Constantinou</a>: co-founder
+
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="cogmenu" id="cog">
+                        <h3>personalization options coming soon!</h3>
+
+                        <br>
+                        <br>
+                        <br>
+                    </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-2 col-sm-0">
                     <div class="buttonbox" id="fade">

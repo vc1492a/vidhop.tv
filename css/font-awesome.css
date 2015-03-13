@@ -180,6 +180,10 @@
 .fa-envelope-o:before {
   content: "\f003";
 }
+.fa-envelope-o:hover {
+  content: "\f003";
+  color: #e62117;
+}
 .fa-heart:before {
   content: "\f004";
 }
@@ -434,6 +438,10 @@
 .fa-info-circle:before {
   content: "\f05a";
 }
+.fa-info-circle:hover {
+  content: "\f05a";
+  color: #e62117;
+}
 .fa-crosshairs:before {
   content: "\f05b";
 }
@@ -557,6 +565,10 @@
 .fa-gears:before,
 .fa-cogs:before {
   content: "\f085";
+}
+.fa-cogs:hover {
+  content: "\f085";
+  color: #e62117;
 }
 .fa-comments:before {
   content: "\f086";
