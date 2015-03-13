@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="discover documentaries, discover the universe, discover yourself">
+    <meta name="author" content="vidhop.tv">
     <meta name="superfish" content="nofish">
 
     <!--CSS-->
@@ -30,6 +33,10 @@
     <script src="js/base.js"></script>
     <script src="js/search.js"></script>
     <script src="js/auth.js"></script>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!--script for YouTube player-->
     <script>
@@ -202,11 +209,67 @@
             var optionclick = $('#option');
             $(optionclick).hide();
         $('#optionclick').click(function(e) {
-            $(optionclick).slideToggle(700);
+            $(optionclick).fadeOut(500).dequeue().slideToggle(700);
             e.preventDefault();
             });
         });
     </script>
+
+    <!--jQuery hide mouse timeout-->
+    <script>
+        $(document).ready(function() {
+
+            var idleMouseTimer;
+            var forceMouseHide = false;
+
+            $("body").css('cursor', 'none');
+
+            $("#wrapper").mousemove(function(ev) {
+                    if(!forceMouseHide) {
+                            $("body").css('cursor', '');
+
+                            clearTimeout(idleMouseTimer);
+
+                            idleMouseTimer = setTimeout(function() {
+                                    $("body").css('cursor', 'none');
+
+                                    forceMouseHide = true;
+                                    setTimeout(function() {
+                                            forceMouseHide = false;
+                                    }, 200);
+                            }, 5000);
+                    }
+            });
+        });
+    </script>
+
+    <!--jQuery fade out buttons-->
+    <script>
+        $(document).ready(function() {
+            $('.buttonbox').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.optionbar').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+
+    <!--enable keyboard shortcuts to buttons (left = previous, right = next)-->
+    <script>
+    </script>
+
+    <!--Google Analytics-->
+    <!--Heap Analytics-->
+
 
 </head>
 <body id="wholething">
@@ -254,7 +317,7 @@
 
             <div class="row">
                 <div class="col-md-2 col-sm-0">
-                    <div class="buttonbox">
+                    <div class="buttonbox" id="fade">
                         <a id="prev"><i class="fa fa-angle-left"></i></a>
                         <h3 id="prevtext">previous</h3>
                     </div>
