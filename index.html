@@ -19,6 +19,8 @@
     <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Gloria+Hallelujah|Handlee' rel='stylesheet' type='text/css'>
 
     <!--javascript-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.fitvids.js"></script>
@@ -281,6 +283,29 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function() {
+            $('.thumbsmenuL').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.thumbsmenuR').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+
+
+    <!--jQuery bounce thumb icons on click-->
+    <script>
+    </script>
 
     <!--enable keyboard shortcuts to buttons (left = previous, right = next)-->
     <script>
@@ -307,9 +332,18 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="optionbar">
-                        <i class="fa fa-info-circle" id="infoclick"></i>
                         <i class="fa fa-envelope-o" id="mailclick"></i>
+                        <i class="fa fa-info-circle" id="infoclick"></i>
                         <i class="fa fa-cogs" id="cogclick"></i>
+                    </div>
+                    <div class="mailmenu" id="mail">
+                        <a href="mailto:ts@vidhop.tv">Taylor Stephens</a>: co-founder
+                        <br>
+                        <a href="mailto:vc@vidhop.tv">Valentino Constantinou</a>: co-founder
+
+                        <br>
+                        <br>
+                        <br>
                     </div>
                     <div class="infomenu" id="info">
                         <h2>vidhop.tv: discover documentaries, discover our universe, discover yourself.</h2>
@@ -329,15 +363,6 @@
                         <h2>there's more?</h2>
                         <h4>yes! new features are added regularly. come back and discover new ways to enjoy</h4>
                         <h4>the best documentaries the web has to offer.</h4>
-
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="mailmenu" id="mail">
-                        <a href="mailto:ts@vidhop.tv">Taylor Stephens</a>: co-founder
-                        <br>
-                        <a href="mailto:vc@vidhop.tv">Valentino Constantinou</a>: co-founder
 
                         <br>
                         <br>
@@ -374,12 +399,26 @@
     </div>
 </div>
 
+<!--<div class="container">
+    <div class="thumbsmenu">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <i class="fa fa-thumbs-down thumbsmenuL"></i>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <i class="fa fa-thumbs-up thumbsmenuR"></i>
+            </div>
+        </div>
+    </div>
+</div>-->
+
 <div class="container">
     <div class="banner">
         <div class="row">
             <div class="col-md-12">
                 <img class="bannerimage" src="elements/logoonblack.png">
-                <h1>vidhop.tv</h1><h6>tm</h6>
+                <h1>vidhop.tv</h1>
+                <h6>tm</h6>
             </div>
         </div>
     </div>
