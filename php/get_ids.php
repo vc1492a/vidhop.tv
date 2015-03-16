@@ -135,7 +135,7 @@ foreach ($sources as $file) {
 	$ids = array_merge($ids, extract_ids($file));
 }
 
-#opens the ids.txt file, currently in 'w' mode which deletes everything upon openning
+#opens the ids.txt file, currently in 'w' mode which deletes everything upon opening
 $file = fopen('ids.txt', 'w');
 
 #write each ID to a new line in ids.txt

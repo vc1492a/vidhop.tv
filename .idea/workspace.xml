@@ -24,35 +24,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68122786" vertical-offset="5603" max-vertical-offset="6585">
-              <caret line="412" column="9" selection-start-line="412" selection-start-column="9" selection-end-line="412" selection-end-column="9" />
+            <state vertical-scroll-proportion="21.341772" vertical-offset="6486" max-vertical-offset="7320">
+              <caret line="320" column="29" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1426293779000" expanded="true" signature="8870:9027" placeholder="..." />
-                <marker date="1426293779000" expanded="true" signature="8963:8995" placeholder="..." />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1426534938000" expanded="true" signature="9728:9885" placeholder="..." />
+                <marker date="1426534938000" expanded="true" signature="9821:9853" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="font-awesome.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/font-awesome.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8195" max-vertical-offset="27705">
-              <caret line="570" column="16" selection-start-line="570" selection-start-column="9" selection-end-line="570" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="grid.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/grid.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3677" max-vertical-offset="4590">
-              <caret line="244" column="26" selection-start-line="244" selection-start-column="26" selection-end-line="244" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.45783132" vertical-offset="3827" max-vertical-offset="4770">
+              <caret line="283" column="14" selection-start-line="283" selection-start-column="14" selection-end-line="283" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -61,18 +55,38 @@
       <file leaf-file-name="youtube.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/youtube.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="1035">
-              <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="1035">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <file leaf-file-name="channels.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/channels.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="16050" max-vertical-offset="98580">
-              <caret line="1091" column="16" selection-start-line="1091" selection-start-column="16" selection-end-line="1091" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ids.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/ids.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1545">
+              <caret line="86" column="11" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_ids.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/get_ids.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2265">
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -85,17 +99,19 @@
       <list>
         <option value="$PROJECT_DIR$/js/jquery.js" />
         <option value="$PROJECT_DIR$/js/jquery.fitvids.js" />
-        <option value="$PROJECT_DIR$/css/grid.css" />
         <option value="/Applications/MAMP/htdocs/css/font-awesome.css" />
         <option value="/Applications/MAMP/htdocs/css/bootstrap.css" />
         <option value="/Applications/MAMP/htdocs/css/youtube.css" />
         <option value="/Applications/MAMP/htdocs/index.html" />
         <option value="/Applications/MAMP/htdocs/css/grid.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/php/channels.txt" />
         <option value="$PROJECT_DIR$/css/font-awesome.css" />
+        <option value="$PROJECT_DIR$/php/get_ids.php" />
+        <option value="$PROJECT_DIR$/php/ids.txt" />
+        <option value="$PROJECT_DIR$/php/channels.txt" />
         <option value="$PROJECT_DIR$/css/youtube.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/grid.css" />
       </list>
     </option>
   </component>
@@ -156,20 +172,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="python" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vidhop.tv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vidhop.tv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="php" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -203,6 +205,9 @@
     <property name="FullScreen" value="true" />
     <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -280,8 +285,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1426293779000" expanded="true" signature="8870:9027" placeholder="..." />
-            <marker date="1426293779000" expanded="true" signature="8963:8995" placeholder="..." />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1426534938000" expanded="true" signature="9728:9885" placeholder="..." />
+            <marker date="1426534938000" expanded="true" signature="9821:9853" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -324,8 +333,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1426293779000" expanded="true" signature="8870:9027" placeholder="..." />
-            <marker date="1426293779000" expanded="true" signature="8963:8995" placeholder="..." />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1426534938000" expanded="true" signature="9728:9885" placeholder="..." />
+            <marker date="1426534938000" expanded="true" signature="9821:9853" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -376,8 +389,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1426293779000" expanded="true" signature="8870:9027" placeholder="..." />
-            <marker date="1426293779000" expanded="true" signature="8963:8995" placeholder="..." />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1426534938000" expanded="true" signature="9728:9885" placeholder="..." />
+            <marker date="1426534938000" expanded="true" signature="9821:9853" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -442,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/ids.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6522678" vertical-offset="604" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/misc_long.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
@@ -498,42 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/send_ids.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28301886" vertical-offset="0" max-vertical-offset="901">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/get_ids.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2265">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userids.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016198704" vertical-offset="0" max-vertical-offset="926">
-          <caret line="1" column="82" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/grid.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3677" max-vertical-offset="4590">
-          <caret line="244" column="26" selection-start-line="244" selection-start-column="26" selection-end-line="244" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="16050" max-vertical-offset="98580">
-          <caret line="1091" column="16" selection-start-line="1091" selection-start-column="16" selection-end-line="1091" selection-end-column="16" />
+          <caret line="1079" column="2" selection-start-line="1079" selection-start-column="2" selection-end-line="1080" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -546,33 +524,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/userids.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="1" column="82" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/send_ids.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28301886" vertical-offset="0" max-vertical-offset="901">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/youtube.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="1035">
-          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="1035">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/channels.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032397408" vertical-offset="0" max-vertical-offset="926">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/ids.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1545">
+          <caret line="86" column="11" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/get_ids.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2265">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68122786" vertical-offset="5603" max-vertical-offset="6585">
-          <caret line="412" column="9" selection-start-line="412" selection-start-column="9" selection-end-line="412" selection-end-column="9" />
+        <state vertical-scroll-proportion="21.341772" vertical-offset="6486" max-vertical-offset="7320">
+          <caret line="320" column="29" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1426293779000" expanded="true" signature="8870:9027" placeholder="..." />
-            <marker date="1426293779000" expanded="true" signature="8963:8995" placeholder="..." />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1426534938000" expanded="true" signature="9728:9885" placeholder="..." />
+            <marker date="1426534938000" expanded="true" signature="9821:9853" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/grid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45783132" vertical-offset="3827" max-vertical-offset="4770">
+          <caret line="283" column="14" selection-start-line="283" selection-start-column="14" selection-end-line="283" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>something.tv</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
