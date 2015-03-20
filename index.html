@@ -308,6 +308,43 @@
 
     <!--enable keyboard shortcuts to buttons (left = previous, right = next)-->
     <script>
+        window.addEventListener("keydown", moveSomething, false);
+
+        function moveSomething(e) {
+            switch(e.keyCode) {
+                case 32:
+                    // space bar pressed
+                    break;
+                case 37:
+                    // left key pressed
+                    if (selection == 0) {
+                        selection = vids.length - 1;
+                    }
+
+                    else {
+                        selection -= 1;
+                    }
+
+                    player.loadVideoById(vids[selection]);
+                case 38:
+                    // up key pressed
+                    break;
+                case 39:
+                    // right key pressed
+                    if (selection == vids.length - 1) {
+                        selection = 0;
+                    }
+
+                    else {
+                        selection += 1;
+                    }
+
+                    player.loadVideoById(vids[selection]);
+                case 40:
+                    // down key pressed
+                    break;
+            }
+        }
     </script>
 
     <!--Google Analytics-->
@@ -430,17 +467,17 @@
             <br>
 
             <div class="row">
-                <div class="col-md-2 col-sm-0">
+                <div class="col-md-2 col-xs-2">
                     <div class="buttonbox" id="fade">
                         <a id="prev"><i class="fa fa-angle-left"></i></a>
                         <h3 id="prevtext">previous</h3>
                     </div>
                 </div>
-                <div class="col-md-8 col-sm-12 video-container">
+                <div class="col-md-8 col-xs-8 video-container">
                     <div class="screen main" id="player">
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-0">
+                <div class="col-md-2 col-xs-2">
                     <div class="buttonbox">
                         <a id="next"><i class="fa fa-angle-right"></i></a>
                         <h3 id="nexttext">next</h3>
@@ -463,7 +500,6 @@
         </div>
     </div>
 </div>-->
-
 
 <div class="container">
     <div class="banner">

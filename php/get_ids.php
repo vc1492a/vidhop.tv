@@ -119,12 +119,13 @@ function extract_ids($filename) {
 
 #array containing the names of all of the different .txt files
 $sources = array(
-	'science_long.txt',
+	#'science_long.txt',
 	#'science_short.txt', nothing in this file
-	'nature_long.txt',
+	#'nature_long.txt',
 	#'nature_short.txt', same
 	#'misc_long.txt', same
-	'misc_short.txt'
+	#'misc_short.txt'
+	'channels.txt'
 );
 
 #initialize array to contain the video ids
