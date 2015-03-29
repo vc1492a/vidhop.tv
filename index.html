@@ -211,7 +211,9 @@
             var infoclick = $('#info');
             $(infoclick).hide();
         $('#infoclick').click(function(e) {
-            $(infoclick).fadeOut(500).dequeue().slideToggle(700);
+			$('#mail').hide();
+			$('#cog').hide();
+            $(infoclick).slideToggle(700);
             e.preventDefault();
             });
         });
@@ -220,7 +222,9 @@
             var mailclick = $('#mail');
             $(mailclick).hide();
         $('#mailclick').click(function(e) {
-            $(mailclick).fadeOut(500).dequeue().slideToggle(700);
+			$('#cog').hide();
+			$('#info').hide();
+            $(mailclick).slideToggle(700);
             e.preventDefault();
             });
         });
@@ -229,7 +233,9 @@
             var cogclick = $('#cog');
             $(cogclick).hide();
         $('#cogclick').click(function(e) {
-            $(cogclick).fadeOut(500).dequeue().slideToggle(700);
+			$('#info').hide();
+			$('#mail').hide();
+            $(cogclick).slideToggle(700);
             e.preventDefault();
             });
         });
@@ -266,16 +272,7 @@
     <!--jQuery fade out buttons-->
     <script>
         $(document).ready(function() {
-            $('.buttonbox').fadeTo(0, '0.3').hover(function() {
-                $(this).fadeTo(500, 1);
-            }, function() {
-                $(this).fadeTo(500, '0.3');
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.optionbar').fadeTo(0, '0.3').hover(function() {
+            $('.fa').fadeTo(0, '0.3').hover(function() {
                 $(this).fadeTo(500, 1);
             }, function() {
                 $(this).fadeTo(500, '0.3');
