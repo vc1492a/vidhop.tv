@@ -1,31 +1,45 @@
 <?php
 
-	/**This script is very minimal at this point. I'm not really sure
-	 * if it needs much more though. It doesn't cost very much
-	 * in terms of runtime so we might as well just send the full
-	 * set of videos upon the request. I am just randomizing the array
-	 * before sending it out but maybe we could come up with a more
-	 * intracate way to maximize the variety.**/
+	/**I'm tired I will comment this later...most likely... .. . . .
+	 */
+	$categories = explode(' ', $_GET['cats']);
 	
-	
-	#open the file containing the YT video IDs
-    $idfile = fopen("ids.txt", 'r');
-	
-	#initiallize an arrar for the IDs
 	$ids = array();
 	
-	#iterate through each line in ids.txt and get the video ID
-	while(! feof($idfile))
-	  {
-	  array_push($ids, trim(fgets($idfile)));
-	  }
-	  
-	fclose($idfile);
+	$idfile = fopen('ids.txt', 'r');
 	
-	#randomize the order for a unique experience
+	#get names out of first line
+	$line = trim(fgets($idfile));
+	
+	$options = str_split($line, 12);
+	
+	$indices = array();
+	
+	foreach ($options as $index=>$option){
+		$option = trim($option);
+		
+		if (in_array($option, $categories)) {
+			array_push($indices,$index);
+		}
+	}
+
+	while(! feof($idfile)){
+		$line = str_split(fgets($idfile),12);
+		
+		foreach ($line as $index=>$id){
+			
+			$id = trim($id);
+
+			if (!in_array($index, $indices)){continue;}
+
+			if (!$id){continue;}
+			
+			array_push($ids, $id);
+		}
+	}
+	
 	shuffle($ids);
 	
-	#send the array to the webpage as JSON
 	echo json_encode($ids);
 	
 ?>

@@ -125,5 +125,89 @@ $(document).ready(function() {
 				}
 			});
 		}
-	};	
+		
+	};
+	
+	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids are not defined there. 
+	window.onkeyup = function(e) {
+	    var key = e.keyCode ? e.keyCode : e.which;
+    	//space bar
+		if (key == 32) {
+			if (player.getPlayerState(1)) {
+				player.pauseVideo(vids[selection]);
+			}
+			//replay (after pausing) currently not supported
+			/*if (player.getPlayerState(0)) {
+				player.playVideo(vids[selection])
+			}*/
+			else {
+				player.playVideo(vids[selection]);
+			}
+		}
+		//m key
+		if (key == 77) {
+			if (player.isMuted() == false) {
+				player.mute(vids[selection]);
+			}
+			else {
+				player.unMute(vids[selection]);
+			}
+		}
+		//f key
+		if (key == 70) {
+			if (player.getPlaybackRate() == 1) {
+				player.setPlaybackRate(1.5);
+			}
+			if (player.getPlaybackRate() == 1.5) {
+				player.setPlaybackRate(2);
+			}
+			if (player.getPlaybackRate() == 2) {
+				player.setPlaybackRate(1);
+			}
+		}
+		//r key
+		if (key == 82) {
+			if (player.getPlaybackRate() == 1) {
+				player.setPlaybackRate(0.5);
+			}
+			if (player.getPlaybackRate() == 0.5) {
+				player.setPlaybackRate(0.25);
+			}
+			if (player.getPlaybackRate() == 0.25) {
+				player.setPlaybackRate(1);
+			}
+		}
+		//escape
+		//enter
+		//ctrl
+		//alt
+		//shift
+		//up arrow
+		//left arrow
+	    if (key == 37) {
+	        if (selection == 0) {
+	            selection = vids.length - 1;
+	        }
+	        else {
+	            selection -= 1;
+	        }
+	        player.loadVideoById(vids[selection]);
+		}
+		//bottom arrow
+		//right arrow
+		if (key == 39) {
+	        if (selection == vids.length - 1) {
+	            selection = 0;
+	        }
+	        else {
+	            selection += 1;
+	        }
+	        player.loadVideoById(vids[selection]);
+	    }
+	}
 });
+
+//player.getCurrentTime() for use to display an ad after x amount of time of video play.
+//player.getPlaybackQuality() retrives current video quality. have filters for sd/hd and skip to next video if not hd
+//player.setPlaybackQuality(suggestedQuality:String):Void
+//player.getAvailableQualityLevels():Array

@@ -51,64 +51,6 @@ function playlist_query($plname) {
 	return $plquery;
 }
 
-function extract_ids($filename) {
-	
-	/**
-	 * This function takes the filename of a txt file (string)
-	 * (in the same folder as this function) which contains
-	 * a list of YT channel/playlist IDs (one per line) and generates
-	 * a list that contains video IDs of videos from each channel/playlist
-	 * on the list. This is accomplished by making requests to the
-	 * YT data api.
-	 * 
-	 * See the channel_query and playlist_query functions for more info.
-	 * **/
-	
-	#initialize empty array for the IDs
-	$ids = array();
-	
-	#open the txt file
-	$file = fopen($filename, 'r');
-	
-	#iterate through the file until the end is reached
-	while(! feof($file)) {
-		
-		#get the channel/playlist name, go to the next line
-		$name = trim(fgets($file));
-		
-		#if its a channel use the channel_query function
-		if ($name[0] == 'U'){
-		
-			#make the API request, convert json into a PHP object
-			$result = json_decode(file_get_contents(channel_query($name)));
-		
-			#iterate through the 'items' array in the PHP object
-			foreach ($result->items as $video) {
-				
-				#push the videoID parameter of each item into $ids
-				array_push($ids, $video->id->videoId);			
-			}
-		}
-		
-		#if its a playlist use the playlist_query function
-		elseif ($name[0] == 'P'){
-			
-			#make the API request, convert json into a PHP object
-			$result = json_decode(file_get_contents(playlist_query($name)));
-		
-			#iterate through the 'items' array in the PHP object
-			foreach ($result->items as $video) {
-				
-				#push the videoID parameter of each item into $ids
-				array_push($ids, $video->contentDetails->videoId);			
-			}
-		}
-	}
-	
-	fclose($file);
-	return $ids;
-}
-
 /**
  * In case we decide to get more intricate with this script/the site in general
  * I think that we should keep all of our sources organized into individual .txt
@@ -116,32 +58,107 @@ function extract_ids($filename) {
  * combining everything into one file (ids.txt) but keeping everything separate will
  * make it easy for us to integrate customizable content into the site.
  * **/
-
-#array containing the names of all of the different .txt files
-$sources = array(
-	#'science_long.txt',
-	#'science_short.txt', nothing in this file
-	#'nature_long.txt',
-	#'nature_short.txt', same
-	#'misc_long.txt', same
-	#'misc_short.txt'
-	'channels.txt'
-);
+ 
+/**
+ * This function takes the filename of a txt file (string)
+ * (in the same folder as this function) which contains
+ * a list of YT channel/playlist IDs (one per line) and generates
+ * a list that contains video IDs of videos from each channel/playlist
+ * on the list. This is accomplished by making requests to the
+ * YT data api.
+ * 
+ * See the channel_query and playlist_query functions for more info.
+ * **/ 
 
 #initialize array to contain the video ids
 $ids = array();
+ 
+ /**gonna have a lot of rulez for the file formating, need to put a super kewl description here**/
+$sources = fopen('sources.txt','r');
 
-#extract the video IDs from each source and add them the the IDs array
-foreach ($sources as $file) {
-	$ids = array_merge($ids, extract_ids($file));
+while(! feof($sources)) {
+	$line = trim(fgets($sources));
+	
+	#make sure its not an empty line before trying to read it
+	if (!$line){continue;}
+	
+	#if a # is there that means its a title for a category
+	if ($line[0] == '#') {
+		#remove #
+		$channel = trim($line, "#");
+		
+		#pad to 11 char for the file format
+		$title = str_pad($channel, 11, ' ');
+		
+		$ids[$channel] = array($title);
+	}
+	
+	#request Ids from playlist
+	else if ($line[0] == 'P'){
+		
+		#make the API request, convert json into a PHP object
+			$result = json_decode(file_get_contents(playlist_query($line)));
+		
+			#iterate through the 'items' array in the PHP object
+			foreach ($result->items as $video) {
+				
+				#push the videoID parameter of each item into $ids
+				array_push($ids[$channel], $video->contentDetails->videoId);			
+			}
+	}
+	
+	#request Ids from user
+	else if ($line[0] == 'U'){
+	
+		#make the API request, convert json into a PHP object
+			$result = json_decode(file_get_contents(channel_query($line)));
+		
+			#iterate through the 'items' array in the PHP object
+			foreach ($result->items as $video) {
+				
+				#push the videoID parameter of each item into $ids
+				array_push($ids[$channel], $video->id->videoId);			
+			}
+	}
+}
+
+#get lengths of each list
+$lengths = array();
+
+foreach ($ids as $key => $value) {
+	$lengths[$key] = count($value);
 }
 
 #opens the ids.txt file, currently in 'w' mode which deletes everything upon opening
 $file = fopen('ids.txt', 'w');
 
-#write each ID to a new line in ids.txt
-foreach ($ids as $id) {
-	fwrite($file, $id . PHP_EOL);
+#iterate through dem boys
+for ($i = 0; $i < max($lengths); $i++) {
+	
+	#create string with all elements
+	$input = '';
+	
+	#go through each category in the list
+	foreach ($ids as $key => $value){
+		
+		#check if all ids from the category have been written
+		if ($i < $lengths[$key]) {
+			$input = $input . ' ' . $value[$i];
+		}
+		
+		#if so just spaces
+		else {
+			$input = $input . ' ' . str_repeat(' ', 11);
+		}
+	}
+	
+	#EOL bruh
+	$input = $input . PHP_EOL;
+	
+	#write it to the file
+	fwrite($file, $input);
 }
+
+fclose($file);
 
 ?>

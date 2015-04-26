@@ -21,6 +21,7 @@ Visitors can jump through the playlist us
         - next
 
 ### Future Updates
+- no more inline javascript
 - video filters that will allow more control over content
 - info and support emails
 - privacy policy and terms of service
@@ -29,6 +30,8 @@ Visitors can jump through the playlist us
 - MTV mode (what MTV used to be)
     - music videos only
     - ability to filter through genres
-    - boombox style page with responsive speakers
+    - maybe a boombox style page with responsive speakers
 - static and psssccchhh sound between video changes (easter egg)
 - non-annoying, subtle ads
+- mobile-friendly updates
+- if YouTube video removed, remove from list

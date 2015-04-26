@@ -1,0 +1,1 @@
+//need to implement key shortcuts here after defining selection and vids variables in this js file.

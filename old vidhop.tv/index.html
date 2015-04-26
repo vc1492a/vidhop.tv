@@ -9,26 +9,340 @@
     <meta name="superfish" content="nofish">
 
     <!--CSS-->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/youtube.css">
     <link rel="stylesheet" href="css/grid.css">
-    
+    <link rel="stylesheet" href="css/youtube.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Gloria+Hallelujah|Handlee' rel='stylesheet' type='text/css'>
 
     <!--javascript-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/base.js"></script>
-    <script src="js/YT_feed.js"></script>
-    <script src="js/YT_shortcuts.js"></script>
+    <!--<script src="js/jquery.fitvids.js"></script>
+    <script>
+        $(document).ready(function(){
+        // Target your .container, .wrapper, .post, etc.
+        $("#wrapper").fitVids();
+        });
+
+    </script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <!--<script src="js/base.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/auth.js"></script>-->
 
     <!--favicon-->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!--script for YouTube player-->
+    <script>
+
+
+      // 2. This code loads the IFrame Player API code asynchronously.
+
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      var vids;
+      var player;
+      var selection = 0;
+
+
+      //This gets videoIDs from the server
+      $.ajax({
+  			url: "php/send_ids.php",
+  			success: function(data) {
+  				vids = $.makeArray(JSON.parse(data));
+  			}
+  		});
+
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+
+          height: '390',
+          width: '640',
+          videoId: vids[selection],
+          playerVars: {
+          	autoplay: 1,
+          	fs: 1,
+          	modestbranding: 1,
+          	//theme: light,
+          //playlist: ['5jYbY909Psw', 'mSCnNMrNa98', '42EBDKfSo8U', 'RQO41BNoGj8'],
+          },
+          events: {
+          	'onStateChange': onPlayerStateChange,
+          },
+
+        });
+
+        function onPlayerStateChange (event) {
+        	if (event.data === 0){
+        		selection += 1;
+        		player.loadVideoById(vids[selection]);
+        	}
+        }
+
+        $('#prev').click( function() {
+        	if (selection == 0) {
+        		selection = vids.length - 1;
+        	}
+
+        	else {
+        		selection -= 1;
+        	}
+
+        	player.loadVideoById(vids[selection]);
+        });
+
+        $('#next').click( function() {
+        	if (selection == vids.length - 1) {
+        		selection = 0;
+        	}
+
+        	else {
+        		selection += 1;
+        	}
+
+        	player.loadVideoById(vids[selection]);
+        });
+
+        $('#prevtext').click( function() {
+        	if (selection == 0) {
+        		selection = vids.length - 1;
+        	}
+
+        	else {
+        		selection -= 1;
+        	}
+
+        	player.loadVideoById(vids[selection]);
+        });
+
+        $('#nexttext').click( function() {
+        	if (selection == vids.length - 1) {
+        		selection = 0;
+        	}
+
+        	else {
+        		selection += 1;
+        	}
+
+        	player.loadVideoById(vids[selection]);
+        });
+
+ 	  };
+
+      //newVid();
+
+      /**
+      function onPlayerStateChange(event){
+      	alert('hai');
+      	if(event.data === 0){
+      		alert('hai');
+      	}
+      };
+
+
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+      **/
+
+
+    </script>
+
+    <!--script to scan user ids and then store video ids-->
+    <script>
+        /**
+        setInterval(function () {
+
+        var userlist = ['UC2C_jShtL725hvbm1arSV9w];
+	    var userlistlen = userlist.length;
+
+            for (i in userlist;
+                //scan for video ids from user ids
+
+            }
+
+        }, 86400000); //triggers daily, in milliseconds
+        **/
+
+
+    </script>
+
+    <!--jQuery fade on load-->
+    <script>
+        $(document).ready(function(){
+            $('#wholething').fadeIn(4000);
+        });
+    </script>
+
+    <!--jQuery option bar-->
+    <script>
+        $(document).ready(function() {
+            var infoclick = $('#info');
+            $(infoclick).hide();
+        $('#infoclick').click(function(e) {
+			$('#mail').hide();
+			$('#cog').hide();
+            $(infoclick).slideToggle(700);
+            e.preventDefault();
+            });
+        });
+
+        $(document).ready(function() {
+            var mailclick = $('#mail');
+            $(mailclick).hide();
+        $('#mailclick').click(function(e) {
+			$('#cog').hide();
+			$('#info').hide();
+            $(mailclick).slideToggle(700);
+            e.preventDefault();
+            });
+        });
+
+        $(document).ready(function() {
+            var cogclick = $('#cog');
+            $(cogclick).hide();
+        $('#cogclick').click(function(e) {
+			$('#info').hide();
+			$('#mail').hide();
+            $(cogclick).slideToggle(700);
+            e.preventDefault();
+            });
+        });
+    </script>
+
+    <!--jQuery hide mouse timeout-->
+    <script>
+        $(document).ready(function() {
+
+            var idleMouseTimer;
+            var forceMouseHide = false;
+
+            $("body").css('cursor', 'none');
+
+            $("#wrapper").mousemove(function(ev) {
+                    if(!forceMouseHide) {
+                            $("body").css('cursor', '');
+
+                            clearTimeout(idleMouseTimer);
+
+                            idleMouseTimer = setTimeout(function() {
+                                    $("body").css('cursor', 'none');
+
+                                    forceMouseHide = true;
+                                    setTimeout(function() {
+                                            forceMouseHide = false;
+                                    }, 200);
+                            }, 5000);
+                    }
+            });
+        });
+    </script>
+
+    <!--jQuery fade out buttons-->
+    <script>
+        $(document).ready(function() {
+            $('.fa').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.thumbsmenuL').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.thumbsmenuR').fadeTo(0, '0.3').hover(function() {
+                $(this).fadeTo(500, 1);
+            }, function() {
+                $(this).fadeTo(500, '0.3');
+            });
+        });
+    </script>
+
+
+    <!--jQuery bounce thumb icons on click-->
+    <script>
+    </script>
+
+    <!--enable keyboard shortcuts to buttons (left = previous, right = next)-->
+    <script>
+        window.addEventListener("keydown", moveSomething, false);
+
+        function moveSomething(e) {
+            switch(e.keyCode) {
+                case 32:
+                    // space bar pressed
+                    break;
+                case 37:
+                    // left key pressed
+                    if (selection == 0) {
+                        selection = vids.length - 1;
+                    }
+
+                    else {
+                        selection -= 1;
+                    }
+
+                    player.loadVideoById(vids[selection]);
+                case 38:
+                    // up key pressed
+                    break;
+                case 39:
+                    // right key pressed
+                    if (selection == vids.length - 1) {
+                        selection = 0;
+                    }
+
+                    else {
+                        selection += 1;
+                    }
+
+                    player.loadVideoById(vids[selection]);
+                case 40:
+                    // down key pressed
+                    break;
+            }
+        }
+    </script>
 
     <!--Google Analytics-->
     <script>
@@ -36,8 +350,10 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
       ga('create', 'UA-60801492-1', 'auto');
       ga('send', 'pageview');
+
     </script>
 
     <!--Heap Analytics-->
@@ -101,21 +417,9 @@
                         <br>
                     </div>
                     <div class="cogmenu" id="cog">
-                    	<!--kinda want to fuck around with the css of this so the whole changing shades when clicking is a bit smoother-->
-                    	<div id="chanSelector">
-	                        <div class="btn-group" name="category">
-							  <button type="button" class="chan btn btn-primary active" name="nature">Nature</button>
-							  <button type="button" class="chan btn btn-primary active" name="sci">Science</button>
-							  <button type="button" class="chan btn btn-primary active" name="misc">Misc</button>
-							</div>
-							<div class="btn-group" name="duration">
-							  <button type="button" class="chan btn btn-primary" name="long">Long</button>
-							  <button type="button" class="chan btn btn-primary active" name="short">Short</button>
-							</div>
-							
-						</div>
-						<br>
-						<button type="button" class="chan btn btn-success" id="sendChoices">Go</button>
+                        <h3>personalization options coming soon!</h3>
+
+                        <br>
                         <br>
                         <br>
                     </div>
@@ -146,7 +450,7 @@
                         <br>
                         Have a suggestion? Shoot us an email!
                         <br>
-                        <a href="mailto:ts@vidhop.tv">Taylor Stevens</a>: co-founder
+                        <a href="mailto:ts@vidhop.tv">Taylor Stephens</a>: co-founder
                         <br>
                         <a href="mailto:vc@vidhop.tv">Valentino Constantinou</a>: co-founder
 
