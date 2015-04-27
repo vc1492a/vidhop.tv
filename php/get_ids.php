@@ -21,7 +21,7 @@ function channel_query($chname) {
 	. 'part=id&fields=items%2Fid&'
 	. 'channelId=' . $chname . '&'
 	. 'type=video&maxResults=50&'
-	. 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I';
+	. 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww'; /** 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I', 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww' **/
 	
 	return $chquery;
 };
@@ -46,7 +46,7 @@ function playlist_query($plname) {
 	. 'maxResults=50&'
 	. 'playlistId=' . $plname . '&'
 	. 'fields=items%2FcontentDetails&'
-	. 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I';
+	. 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww';
 	
 	return $plquery;
 }
@@ -73,7 +73,7 @@ function playlist_query($plname) {
 #initialize array to contain the video ids
 $ids = array();
  
- /**gonna have a lot of rulez for the file formating, need to put a super kewl description here**/
+ /**gonna have a lot of rulez for the file formatting, need to put a super kewl description here**/
 $sources = fopen('sources.txt','r');
 
 while(! feof($sources)) {

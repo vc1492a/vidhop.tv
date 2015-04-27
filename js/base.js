@@ -6,17 +6,19 @@ $(document).ready(function() {
     var infoClick = $('#info');
     var mailClick = $('#mail');
     var cogClick = $('#cog');
+    var keyboardClick = $('#keyboard');
     
-    var allThree = $('#info, #mail, #cog');
+    var allFour = $('#info, #mail, #cog, #keyboard');
     
     infoClick.hide();
     mailClick.hide();
     cogClick.hide();
+    keyboardClick.hide();
     
     //I want to find a way to highlight the symbols while the menu is shown
     $('#infoclick').click(function(e) {
     	if(!infoClick.is(':visible')){
-    		allThree.hide();
+    		allFour.hide();
     	}
         infoClick.fadeOut(500).dequeue().slideToggle(700);
         e.preventDefault();
@@ -24,7 +26,7 @@ $(document).ready(function() {
   	
     $('#mailclick').click(function(e) {
     	if(!mailClick.is(':visible')){
-    		allThree.hide();
+    		allFour.hide();
     	}
         mailClick.fadeOut(500).dequeue().slideToggle(700);
         e.preventDefault();
@@ -32,11 +34,21 @@ $(document).ready(function() {
     
     $('#cogclick').click(function(e) {
     	if(!cogClick.is(':visible')){
-    		allThree.hide();
+    		allFour.hide();
     	}
         cogClick.fadeOut(500).dequeue().slideToggle(700);
         e.preventDefault();
-    }); 
+    });
+
+    $('#keyboardclick').click(function(e) {
+        if(!keyboardClick.is(':visible')){
+            allFour.hide();
+        }
+        keyboardClick.fadeOut(500).dequeue().slideToggle(700);
+        e.preventDefault();
+    });
+
+
     
     //interaction with channel controls
     var chanButton = $('.chan');

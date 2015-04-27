@@ -1,9 +1,6 @@
-#maybe categories should be nature, space, engineering, history, misc.
-#check sources_with_descr for descriptions of channels and playlists
-
 #scishort
-UCsT0YIqwnpJCM-mx7-gSA4Q
-UCAuUUnT6oDeKwE6v1NGQxug
+UCsT0YIqwnpJCM-mx7-gSA4Q #TEDx
+UCAuUUnT6oDeKwE6v1NGQxug #TED
 
 #scilong
 UCIR_LPmEQ9QHR0yB2lxgaxQ
@@ -12,7 +9,7 @@ UC6LQkoFYlVc6zFErWDYobtA
 UCu0rb4i5lRkZNQEvpRzLBIw
 
 #natureshort
-PLX67j_WvvdlotFly4FaGcp0L9q6VRlz47
+PLX67j_WvvdlotFly4FaGcp0L9q6VRlz47 #geology 101
 
 #naturelong
 PLLgqOez346ZPKFQTobmmFMd3bIdWOEabR
@@ -22,8 +19,8 @@ UCf7Hx-1pkxOemSmXid43ebg
 UCxu3PabUX0feeV1CNQtchxQ
 UCjs0YUNLJL279gij0pb79DQ
 UCrIwlTaeK8ZYJCThRLuNTiA
-PL5o3ll3G4acxgDMSO7JXvDsosQ-UDPL6n
-PLrFGHFaixQlWxI7f7E90guDMJ-4FhbKE-
+PL5o3ll3G4acxgDMSO7JXvDsosQ-UDPL6n #200 popular nature documentaries
+PLrFGHFaixQlWxI7f7E90guDMJ-4FhbKE- #19 geological documentaries
 
 #miscshort
 UC2C_jShtL725hvbm1arSV9w
@@ -34,8 +31,8 @@ UCgyJPixJl95X1ut3E9K99KA
 PL66rc6rMkuadrUbu0w23aTrEByuF4aqgS
 PL66rc6rMkuad7yLphGe2rY9dpmLewvyZ5
 PL66rc6rMkuacYdUR882FSdAqXy--3GlL4
-PLOQm_eUXD7refxe2zn4cWWxF4NzRx2Ut2
-PL6KHloQnrWy0TlpJe5hi8M_Fzv1WdcHG9
-PLvpFenv-nFqI19mtaAOf5aybg5IEcHlYL
-UCNPXMyQe-jbSYjiQiP6KQow
-UCIK97ILYtJBI9R_NcDfj-Sg
+PLOQm_eUXD7refxe2zn4cWWxF4NzRx2Ut2 #cold war documentaries
+PL6KHloQnrWy0TlpJe5hi8M_Fzv1WdcHG9 #battlefield documentary series
+PLvpFenv-nFqI19mtaAOf5aybg5IEcHlYL #engineering empires (history)
+UCNPXMyQe-jbSYjiQiP6KQow #lots of mixed categories
+UCIK97ILYtJBI9R_NcDfj-Sg #lots of mixed categories

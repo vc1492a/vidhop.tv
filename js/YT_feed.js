@@ -6,8 +6,9 @@ $(document).ready(function() {
 	var query;
 	var vids;
 	var selection = 0;
+	var volume;
 	
-	//we can change this
+	//we can change this. start with short videos
 	query = 'cats=scishort+natureshort+miscshort';
 	
 	//get initial set of video Ids
@@ -128,18 +129,14 @@ $(document).ready(function() {
 		
 	};
 	
-	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids are not defined there. 
+	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids and vid[selection]  are not defined there. 
 	window.onkeyup = function(e) {
 	    var key = e.keyCode ? e.keyCode : e.which;
     	//space bar
 		if (key == 32) {
-			if (player.getPlayerState(1)) {
+			if (player.getPlayerState() == 1) {
 				player.pauseVideo(vids[selection]);
 			}
-			//replay (after pausing) currently not supported
-			/*if (player.getPlayerState(0)) {
-				player.playVideo(vids[selection])
-			}*/
 			else {
 				player.playVideo(vids[selection]);
 			}
@@ -177,6 +174,34 @@ $(document).ready(function() {
 				player.setPlaybackRate(1);
 			}
 		}
+		//u key
+        if (key == 85) {
+            //need to check mute because player.getVolume returns a value even if the video is muted
+            //if muted, unmute
+            if (player.isMuted() == true) {
+                player.unMute(vids[selection]);
+            }
+            //get volume and raise by 5
+            if (player.isMuted() == false) {
+                volume = player.getVolume();
+                volume += 5;
+                player.setVolume(volume);
+            }
+        }
+		//d key
+		if (key == 68) {
+		    //need to check mute because player.getVolume returns a value even if the video is muted
+            //if muted, unmute
+            if (player.isMuted() == true) {
+                player.unMute(vids[selection]);
+            }
+            //get volume and raise by 5
+            if (player.isMuted() == false) {
+                volume = player.getVolume();
+                volume -= 5;
+                player.setVolume(volume);
+            }
+        }
 		//escape
 		//enter
 		//ctrl
@@ -211,3 +236,4 @@ $(document).ready(function() {
 //player.getPlaybackQuality() retrives current video quality. have filters for sd/hd and skip to next video if not hd
 //player.setPlaybackQuality(suggestedQuality:String):Void
 //player.getAvailableQualityLevels():Array
+//if no video with selected filters, prompt user and suggest selecting different categories

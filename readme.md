@@ -2,7 +2,7 @@ vidhop.tv
 ==========
 
 vidhop.tv is a video content platform that shows plays a playlist of documentary style television, using a randomized sequence of videos.
-Visitors can jump through the playlist us
+Visitors can jump through the playlist using the on-screen keys or keyboard shortcuts.
 
 ### Features
 - menu bar
@@ -19,10 +19,12 @@ Visitors can jump through the playlist us
     - keyboard shortcuts
         - previous
         - next
-		- pause (play not yet working)
+		- play/pause
 		- mute
 		- fast foward (1.5x, 2x)
 		- rewind (0.25x, 0.5x)
+		- volume up
+		- volume down
 
 ### Future Updates
 - video filters that will allow more control over content

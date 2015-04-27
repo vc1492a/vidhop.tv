@@ -1094,7 +1094,8 @@ a {
 }
 a:hover,
 a:focus {
-  color: #e62117;
+  //color: #e62117;
+  color: #337ab7;
   text-decoration: none;
 }
 a:focus {
@@ -3114,6 +3115,7 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
+  font-size: 22px;
 }
 .btn-success:hover,
 .btn-success:focus,
