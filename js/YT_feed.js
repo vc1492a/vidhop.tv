@@ -1,5 +1,16 @@
+//we need to fix the errors in the player load. I think the YouTube API needs some time to load
+//loading the api just prior to creating the playlist in YT_feed.js causes errors 3/4ths of the time
+//in Chrome and 2/3 of the time in Safari. Moving that load to the top of this file does nothing for Chrome
+//but improves Safari significantly to failing to load just 1/6 of the time.
+
 $(document).ready(function() {
-	//option buttons
+    //load YT player iframe API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api/";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    //option buttons
 	var chanSelector = $('#chanSelector');
 	var sendChoices = $('#sendChoices');
 	var combos;
@@ -9,7 +20,7 @@ $(document).ready(function() {
 	var volume;
 	
 	//we can change this. start with short videos
-	query = 'cats=scishort+natureshort+miscshort';
+	query = 'cats=scishort+natureshort';
 	
 	//get initial set of video Ids
 	$.ajax({
@@ -20,14 +31,7 @@ $(document).ready(function() {
 			selection = 0;
 		}
 	});
-	
-	//load YT player iframe API
-	var tag = document.createElement('script');
-	tag.src = "https://www.youtube.com/iframe_api";
-	var firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-	
 	//Create a YT player after the API downloads
 	var player;
 	window.onYouTubeIframeAPIReady = function() {
@@ -128,8 +132,8 @@ $(document).ready(function() {
 		}
 		
 	};
-	
-	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids and vid[selection]  are not defined there. 
+
+	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids and vid[selection]  are not defined there.
 	window.onkeyup = function(e) {
 	    var key = e.keyCode ? e.keyCode : e.which;
     	//space bar

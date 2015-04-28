@@ -10,6 +10,7 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
     - filters/settings (coming soon)
     - email and newsletter sign-up
 - video playback
+    - video categories
     - full screen option
     - cast video option
     - closed captioning support
@@ -27,7 +28,6 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
 		- volume down
 
 ### Future Updates
-- video filters that will allow more control over content
 - info and support emails
 - privacy policy and terms of service
 - links to social media accounts
