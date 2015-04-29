@@ -8,9 +8,6 @@ $(document).ready(function() {
 
 //these elements load after the window is finished loading all other elements.
 $(window).bind("load", function() {
-    //fade in the entire page on load
-    //$('#wholething').fadeIn(4000);
-
    //option bar
    var infoClick = $('#info');
    var mailClick = $('#mail');

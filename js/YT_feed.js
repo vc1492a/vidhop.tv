@@ -3,6 +3,13 @@
 //in Chrome and 2/3 of the time in Safari. Moving that load to the top of this file does nothing for Chrome
 //but improves Safari significantly to failing to load just 1/6 of the time.
 
+//I pushed some elements in base.js to load after the page is finished loading.
+//this has reduced the player load error even more, meaning the player loads and works well in Mozilla and Safari
+//almost all the time. Chrome is better but still has some issues. I think the YouTube API finishes loading and
+//tries to queue the playlist and selection, but the send_ids.php file fails to load all of the videos prior
+//to the player calling for the playlist of videos. This causes an undefined error to occur and then as a result
+//the player fails to load.
+
 $(document).ready(function() {
     //load YT player iframe API
     var tag = document.createElement('script');
@@ -18,10 +25,10 @@ $(document).ready(function() {
 	var vids;
 	var selection = 0;
 	var volume;
-	
+
 	//we can change this. start with short videos
 	query = 'cats=scishort+natureshort';
-	
+
 	//get initial set of video Ids
 	$.ajax({
 		url: "php/send_ids.php",
@@ -38,7 +45,7 @@ $(document).ready(function() {
 		player = new YT.Player('player', {
 		height: '390',
 		width: '640',
-		videoId: vids[selection],
+		videoId: vids[selection], //this line throws an error in Chrome: "cannot read property '0' of undefined". Works pretty well in Firefox and Safari.
 		playerVars: {autoplay: 1,fs: 1,modestbranding: 1},
 		events: {'onStateChange': onPlayerStateChange}
 	    });
@@ -133,7 +140,7 @@ $(document).ready(function() {
 		
 	};
 
-	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids and vid[selection]  are not defined there.
+	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids and vids[selection] are not defined there.
 	window.onkeyup = function(e) {
 	    var key = e.keyCode ? e.keyCode : e.which;
     	//space bar
@@ -194,7 +201,6 @@ $(document).ready(function() {
         }
 		//d key
 		if (key == 68) {
-		    //need to check mute because player.getVolume returns a value even if the video is muted
             //if muted, unmute
             if (player.isMuted() == true) {
                 player.unMute(vids[selection]);
