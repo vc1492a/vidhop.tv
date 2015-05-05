@@ -44,12 +44,29 @@ RewriteRule "(^|/)\." - [F]
 <FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
     ## Apache 2.2
     Order allow,deny
+	
+	#replace two lines below with following code to block spammers by their IP addresses.
     Deny from all
     Satisfy All
-
+	
+	#Allow from all
+	#Deny from xxx.xxx.xxx.xxx
+	#Deny from xxx.xxx.xxx.xxy
     ## Apache 2.4
     # Require all denied
 </FilesMatch>
+
+#block visitors by referrer
+#these referrers were spotted via Google Analytics on May 5th, 2015. 
+RewriteCond %{HTTP_REFERER} free-share-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} pornhub-forum\.uni\.me [NC, OR]
+RewriteCond %{HTTP_REFERER} pornhub-forum\.ga [NC, OR]
+RewriteCond %{HTTP_REFERER} site2\free-share-buttons\.com [NC, OR]
+RewriteCond %{HTTP_REFERER} site3\free-share-buttons\.com [NC, OR]
+RewriteCond %{HTTP_REFERER} site4\free-share-buttons\.com [NC, OR]
+RewriteCond %{HTTP_REFERER} Get-Free-Traffic-Now\.com [NC, OR]
+RewriteRule .* - [F]
+
 
 # Remove the following line if you want to block blank referrer too
 RewriteCond %{HTTP_REFERER} !^$
