@@ -1,0 +1,99 @@
+# htaccess file that betters our SEO, increases security, and aids in performance.
+
+## REDIRECTS AND SETUP ##
+#directory index
+DirectoryIndex index.html  
+
+#activate RewriteEngine
+RewriteEngine on
+
+#on error load document
+ErrorDocument 403 http://www.vidhop.tv/403page.html 
+ErrorDocument 404 http://www.vidhop.tv/404page.html 
+ErrorDocument 500 http://www.vidhop.tv/500page.html
+
+#error document force new URL #doesn't yet work
+#RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv\.403page.html [NC]
+#RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv\.404page.html [NC]
+#RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv\.500page.html [NC]
+
+#force non-www
+RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv [NC]
+
+#execute rewrite rule
+RewriteRule ^(.*)$ http://vidhop.tv/$1 [L,R=301] 
+
+## SECURITY ##
+#disable directory browsing
+Options All -Indexes
+
+#deny access to hidden files and directories.
+RewriteCond %{SCRIPT_FILENAME} -d [OR]
+RewriteCond %{SCRIPT_FILENAME} -f
+RewriteRule "(^|/)\." - [F]
+
+#deny access to backup and source files generated during development.
+#this protects potentially sensitive personal information.
+<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
+    ## Apache 2.2
+    Order allow,deny
+    Deny from all
+    Satisfy All
+
+    ## Apache 2.4
+    # Require all denied
+</FilesMatch>
+
+# Remove the following line if you want to block blank referrer too
+RewriteCond %{HTTP_REFERER} !^$
+
+#add specific referers to block below (replace example.com)
+RewriteCond %{HTTP_REFERER} !^https?://(.+\.)?example.com [NC]
+RewriteRule \.(jpe?g|png|gif|bmp)$ - [NC,F,L]
+
+# If you want to display a "blocked" banner in place of the hotlinked image,
+# replace the above rule with:
+# RewriteRule \.(jpe?g|png|gif|bmp) http://example.com/blocked.png [R,L]
+
+## PERFORMANCE ##
+#compress text files
+<IfModule mod_deflate.c>
+
+    # Force compression for mangled headers.
+    # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+
+    # Compress all output labeled with one of the following MIME-types
+    # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+    #  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
+    #  as `AddOutputFilterByType` is still in the core directives).
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE application/atom+xml \
+                                      application/javascript \
+                                      application/json \
+                                      application/rss+xml \
+                                      application/vnd.ms-fontobject \
+                                      application/x-font-ttf \
+                                      application/x-web-app-manifest+json \
+                                      application/xhtml+xml \
+                                      application/xml \
+                                      font/opentype \
+                                      image/svg+xml \
+                                      image/x-icon \
+                                      text/css \
+                                      text/html \
+                                      text/plain \
+                                      text/x-component \
+                                      text/xml
+    </IfModule>
+
+</IfModule>
+
+
+
+

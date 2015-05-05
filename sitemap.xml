@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<!--The sitemap for a single page site is super simple and almost not neccessary, but it still helps with SEO-->
+<url>
+  <loc>http://www.vidhop.tv/</loc>
+  <lastmod>2015-04-29T15:04:53+00:00</lastmod> <!--need to update this when we make changes to the site-->
+  <changefreq>daily</changefreq>
+</url>
+</urlset>

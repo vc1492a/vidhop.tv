@@ -57,6 +57,21 @@
     margin-right: auto;
 }
 
+.fourohfour {
+	text-align: center;
+    color: gray;
+    background-color: #1b1b1b;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 400;
+    font-size: 45px;
+    height: auto;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
 //this isnt working right
 .chan:focus{
 	outline:none;
