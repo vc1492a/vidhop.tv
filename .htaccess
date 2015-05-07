@@ -12,23 +12,18 @@ ErrorDocument 403 http://www.vidhop.tv/403page.html
 ErrorDocument 404 http://www.vidhop.tv/404page.html 
 ErrorDocument 500 http://www.vidhop.tv/500page.html
 
-#site offline page
-#I don't have any odea how exactly this works yet but would be useful in the future.
-#server ip
-#RewriteCond %{REMOTE_ADDR}  !162.213.255.61
-#RewriteCond %{REMOTE_ADDR}  !127.0.0.1
-#RewriteRule !offline.php$ http://www.vidhop.tv/backsoon.html [L,R=307]
-
-#error document force new URL #doesn't yet work
-#RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv\.403page.html [NC]
-#RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv\.404page.html [NC]
-#RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv\.500page.html [NC]
-
 #force non-www
 RewriteCond %{HTTP_HOST} ^www\.vidhop\.tv [NC]
-
-#execute rewrite rule
 RewriteRule ^(.*)$ http://vidhop.tv/$1 [L,R=301] 
+
+#redirect favicon traffic to favicon.ico
+# CANONICAL FAVICONS
+<IfModule mod_rewrite.c>
+	RewriteBase /
+	RewriteCond %{REQUEST_URI} !^/favicon.ico$ [NC]
+	RewriteCond %{REQUEST_URI} /favicon(s)?\.?(gif|ico|jpe?g?|png)?$ [NC]
+	RewriteRule (.*) http://vidhop.tv/favicon.ico [R=301,L]
+</IfModule>
 
 ## SECURITY ##
 #disable directory browsing
@@ -39,48 +34,129 @@ RewriteCond %{SCRIPT_FILENAME} -d [OR]
 RewriteCond %{SCRIPT_FILENAME} -f
 RewriteRule "(^|/)\." - [F]
 
+#block access to the htaccess file itself
+<Files .htaccess>
+	Order allow,deny
+	Deny from all
+</Files>
+
 #deny access to backup and source files generated during development.
 #this protects potentially sensitive personal information.
 <FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
     ## Apache 2.2
-    Order allow,deny
-	
-	#replace two lines below with following code to block spammers by their IP addresses.
+	Order allow,deny
     Deny from all
     Satisfy All
 	
-	#Allow from all
-	#Deny from xxx.xxx.xxx.xxx
-	#Deny from xxx.xxx.xxx.xxy
     ## Apache 2.4
     # Require all denied
 </FilesMatch>
 
-#block visitors by referrer
-#these referrers were spotted via Google Analytics on May 5th, 2015. 
-RewriteCond %{HTTP_REFERER} free-share-buttons\.com [NC,OR]
-RewriteCond %{HTTP_REFERER} pornhub-forum\.uni\.me [NC, OR]
-RewriteCond %{HTTP_REFERER} pornhub-forum\.ga [NC, OR]
-RewriteCond %{HTTP_REFERER} site2\free-share-buttons\.com [NC, OR]
-RewriteCond %{HTTP_REFERER} site3\free-share-buttons\.com [NC, OR]
-RewriteCond %{HTTP_REFERER} site4\free-share-buttons\.com [NC, OR]
-RewriteCond %{HTTP_REFERER} Get-Free-Traffic-Now\.com [NC, OR]
-RewriteRule .* - [F]
+#block visitors by referer ##NOT YET WORKING
+#these referrs were spotted via Google Analytics on May 6th, 2015.
+#[NC, OR] should be added to every referrer but the last. 
 
+#the code below throws a 500 internal server error. Can't seemt to locate the issue.
+#in any case, blocking referers through .htaccess is not the best way to do it. 
+#there are filters and options in Google Analytics that can better thwart referer spam.
 
-# Remove the following line if you want to block blank referrer too
-RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} ^http://([^.]+\.)*free-share-buttons\.com [NC,OR]
+#RewriteCond %{HTTP_REFERER} pornhub-forum\.uni\.me [NC, OR]
+#RewriteCond %{HTTP_REFERER} pornhub-forum\.ga [NC, OR]
+#RewriteCond %{HTTP_REFERER} get-free-traffic-now\.com [NC]
+#RewriteRule .* - [F]
 
-#add specific referers to block below (replace example.com)
-#need to add an F in the brackets of the Rewrite Rule to activate.
-RewriteCond %{HTTP_REFERER} !^https?://(.+\.)?example.com [NC]
-RewriteRule \.(jpe?g|png|gif|bmp)$ - [NC,L]
+#block bad bots and site rippers
+#below are some well known bots and site rippers as of May 6th, 2015.
+#in some cases blocking these users frees up a lot of server performance.
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR] 
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR] 
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Zeus 
+RewriteRule ^.* - [F]
 
 # If you want to display a "blocked" banner in place of the hotlinked image,
 # replace the above rule with:
 # RewriteRule \.(jpe?g|png|gif|bmp) http://example.com/blocked.png [R,L]
 
 ## PERFORMANCE ##
+#prevent hot-linking on images and other files
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?vidhop.tv/.*$ [NC]
+RewriteRule \.(jpe?g|png|gif|bmp|js|css)$ - [F,L]
+
 #compress text files
 <IfModule mod_deflate.c>
 
@@ -174,6 +250,23 @@ RewriteRule \.(jpe?g|png|gif|bmp)$ - [NC,L]
     Header unset ETag
 </IfModule>
 FileETag None
+
+## SEARCH ENGINE OPTIMIZATION ##
+#direct bots toward the sitemap.xml file.
+<IfModule mod_alias.c>
+	RedirectMatch 301 /sitemap\.xml$ http://vidhop.tv/sitemap.xml
+	RedirectMatch 301 /sitemap\.xml\.gz$ http://vidhop.tv/sitemap.xml.gz
+</IfModule>
+
+#direct bots toward the robots.txt file
+#the robot.txt file stops bots from indexing certain directories and also lets
+#bots know where to locate the sitemap.xml file.
+<IfModule mod_rewrite.c>
+	RewriteBase /
+	RewriteCond %{REQUEST_URI} !^/robots.txt$ [NC]
+	RewriteCond %{REQUEST_URI} robots\.txt [NC]
+	RewriteRule .* http://vidhop.tv/robots.txt [R=301,L]
+</IfModule>
 
 
 

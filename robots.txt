@@ -1,0 +1,10 @@
+User-Agent: *
+Disallow: 
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /elements/
+Disallow: /php/
+Disallow: /old-vidhop.tv/
+
+Sitemap: http://www.vidhop.tv/sitemap.xml
