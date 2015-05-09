@@ -201,7 +201,7 @@ RewriteRule \.(jpe?g|png|gif|bmp|js|css)$ - [F,L]
     ExpiresDefault                                      "access plus 1 month"
 
   # CSS
-    ExpiresByType text/css                              "access plus 1 year"
+    ExpiresByType text/css                              "access plus 1 month"
 
   # Data interchange
     ExpiresByType application/json                      "access plus 0 seconds"
@@ -253,10 +253,11 @@ FileETag None
 
 ## SEARCH ENGINE OPTIMIZATION ##
 #direct bots toward the sitemap.xml file.
-<IfModule mod_alias.c>
-	RedirectMatch 301 /sitemap\.xml$ http://vidhop.tv/sitemap.xml
-	RedirectMatch 301 /sitemap\.xml\.gz$ http://vidhop.tv/sitemap.xml.gz
-</IfModule>
+#works on KM site but when activated here results in a loop redirect error.
+#<IfModule mod_alias.c>
+#	RedirectMatch 301 /sitemap\.xml$ http://vidhop.tv/sitemap.xml
+#	RedirectMatch 301 /sitemap\.xml\.gz$ http://vidhop.tv/sitemap.xml.gz
+#</IfModule>
 
 #direct bots toward the robots.txt file
 #the robot.txt file stops bots from indexing certain directories and also lets
