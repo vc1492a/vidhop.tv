@@ -26,8 +26,20 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
 		- rewind (0.25x, 0.5x)
 		- volume up
 		- volume down
+- SEO
+	- updated meta and alt tags
+	- sitemap.xml
+	- robots.xml
+	- .htaccess
+- security
+	- .htaccess
+- performance
+	- .htaccess
+	- load animations after window load
 
 ### Future Updates
+
+- HTTPS and SSL, vidhop.tv goes secure
 - info and support emails
 - privacy policy and terms of service
 - links to social media accounts
