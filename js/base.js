@@ -123,4 +123,10 @@ $(window).bind("load", function() {
    }, function() {
        $(this).fadeTo(500, '0.3');
    });
+
+   $('.consider-donating').fadeTo(0, '0.3').hover(function() {
+          $(this).fadeTo(500, 1);
+      }, function() {
+          $(this).fadeTo(500, '0.3');
+      });
 });

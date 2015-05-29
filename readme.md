@@ -36,10 +36,14 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
 - performance
 	- .htaccess
 	- load animations after window load
+- misc
+    - PayPal donation button
 
 ### Future Updates
 
 - HTTPS and SSL, vidhop.tv goes secure
+- improve site animations (jQuery slide + fade)
+- center all site elements
 - info and support emails
 - privacy policy and terms of service
 - links to social media accounts
