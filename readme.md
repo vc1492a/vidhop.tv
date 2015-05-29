@@ -7,7 +7,8 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
 ### Features
 - menu bar
     - information
-    - filters/settings (coming soon)
+    - filters/settings
+	- keyboard shortcut map
     - email and newsletter sign-up
 - video playback
     - video categories
@@ -41,9 +42,11 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
 
 ### Future Updates
 
+- fix load bug (moslty in Chrome but also occurs in Safari)
 - HTTPS and SSL, vidhop.tv goes secure
 - improve site animations (jQuery slide + fade)
 - center all site elements
+- highlight menu item when selected
 - info and support emails
 - privacy policy and terms of service
 - links to social media accounts
