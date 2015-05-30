@@ -15,6 +15,14 @@
 #wholething{
     //background-image:url('some-image.jpg');
     display:none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 95%;
+    margin: auto;
 }
 
 .banner {

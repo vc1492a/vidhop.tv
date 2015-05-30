@@ -24,33 +24,45 @@ $(window).bind("load", function() {
    //I want to find a way to highlight the symbols while the menu is shown
    $('#infoclick').click(function(e) {
     if(!infoClick.is(':visible')){
-        allFour.hide();
+        allFour.fadeOut(300);
     }
-       infoClick.fadeOut(500).dequeue().slideToggle(700);
+       infoClick.animate({
+           height: "toggle",
+           opacity: "toggle",
+       }, 1000);
        e.preventDefault();
    });
 
    $('#mailclick').click(function(e) {
     if(!mailClick.is(':visible')){
-        allFour.hide();
+        allFour.fadeOut(300);
     }
-       mailClick.fadeOut(500).dequeue().slideToggle(700);
+       mailClick.animate({
+           height: "toggle",
+           opacity: "toggle",
+       }, 1000);
        e.preventDefault();
    });
 
    $('#cogclick').click(function(e) {
     if(!cogClick.is(':visible')){
-        allFour.hide();
+        allFour.fadeOut(300);
     }
-       cogClick.fadeOut(500).dequeue().slideToggle(700);
+       cogClick.animate({
+           height: "toggle",
+           opacity: "toggle",
+       }, 1000);
        e.preventDefault();
    });
 
    $('#keyboardclick').click(function(e) {
        if(!keyboardClick.is(':visible')){
-           allFour.hide();
+           allFour.fadeOut(300);
        }
-       keyboardClick.fadeOut(500).dequeue().slideToggle(700);
+       keyboardClick.animate({
+           height: "toggle",
+           opacity: "toggle",
+       }, 1000);
        e.preventDefault();
    });
 
