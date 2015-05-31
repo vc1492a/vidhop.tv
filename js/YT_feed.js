@@ -25,9 +25,10 @@ $(document).ready(function() {
 	var vids;
 	var selection = 0;
 	var volume;
+	var count = 0;
 
 	//we can change this. start with short videos
-	query = 'cats=scishort+natureshort';
+	query = "cat[]=sci&cat[]=nat&len[]=short";
 
 	//get initial set of video Ids
 	$.ajax({
@@ -54,7 +55,8 @@ $(document).ready(function() {
 		function onPlayerStateChange (event) {
 			if (event.data === 0){
 				selection += 1;
-		    		player.loadVideoById(vids[selection]);
+				count = checkCount(count);
+	    		player.loadVideoById(vids[selection]);
 			}
 		} 
 		
@@ -65,6 +67,8 @@ $(document).ready(function() {
 	    	else {
 	    		selection -= 1;
 	    	}
+
+	    	count = checkCount(count);
 	    	player.loadVideoById(vids[selection]);
 	    });
 	    $('#next').click( function() {
@@ -74,8 +78,11 @@ $(document).ready(function() {
 	    	else {
 	    		selection += 1;
 	    	}
+
+	    	count = checkCount(count);
 	    	player.loadVideoById(vids[selection]);
 	    });
+
 	    $('#prevtext').click( function() {
 	    	if (selection == 0) {
 	    		selection = vids.length - 1;
@@ -83,8 +90,11 @@ $(document).ready(function() {
 	    	else {
 	    		selection -= 1;
 	    	}
+
+	    	count = checkCount(count);
 	    	player.loadVideoById(vids[selection]);
 	    });
+
 	    $('#nexttext').click( function() {
 	    	if (selection == vids.length - 1) {
 	    		selection = 0;
@@ -92,52 +102,32 @@ $(document).ready(function() {
 	    	else {
 	    		selection += 1;
 	    	}
+
+	    	count = checkCount(count);
 	    	player.loadVideoById(vids[selection]);
 	    });
 	    
-	    //get list of all choices
-		sendChoices.click( function () {
-			combos = [];
-			var outputArray = [];
-			var fields = chanSelector.children();
-			fields.each( function(){
-				field = $(this);
-				outputArray[field.attr('name')] = [];
-				var choices = field.children();
-				choices.each( function() {
-					var choice = $(this);
-					if (choice.hasClass('active')){
-						outputArray[field.attr('name')].push(choice.attr('name'));
-					}
-				});
-			});
-			
-			//make a string for php (need to make this more complex for more than two category types)
-			$.each(outputArray['category'], function(index, catValue){
-				$.each(outputArray['duration'], function(index, durValue) {
-					combos.push(catValue + durValue);
-				});
-			});
-			
-			
-			query = 'cats=' + combos.join('+');
-			getIds(query);
-			
-		});
-		
-		function getIds(query) {
-			//This gets a list of videoIDs from the server
-			$.ajax({
+	    var channelSel = $("#channel-sel");
+
+	    channelSel.submit(function(e){
+	    	e.preventDefault();
+	    	e.stopPropagation();
+
+	    	var query = channelSel.serialize();
+
+	    	$.ajax({
 				url: "php/send_ids.php",
 				data: query,
 				success: function(data) {
 					vids = $.makeArray(JSON.parse(data));
 					selection = 0;
+
+					count = checkCount(count);
 					player.loadVideoById(vids[selection]);
 				}
 			});
-		}
-		
+
+	    });
 	};
 
 	//keyboard shortcuts. Currently cannot use within YT_shortcuts as vids and vids[selection] are not defined there.
@@ -226,6 +216,8 @@ $(document).ready(function() {
 	        else {
 	            selection -= 1;
 	        }
+
+	        count = checkCount(count);
 	        player.loadVideoById(vids[selection]);
 		}
 		//bottom arrow
@@ -237,10 +229,29 @@ $(document).ready(function() {
 	        else {
 	            selection += 1;
 	        }
+
+	        count = checkCount(count);
 	        player.loadVideoById(vids[selection]);
 	    }
 	}
+
+	function checkCount(count){
+
+		if (count == 4){
+
+			$("#pop-up").show();
+			setTimeout(function(){$("#pop-up").hide();}, 10000);
+
+			return 0;
+		}
+
+		else{
+			return count + 1;
+		}
+	}
 });
+
+
 
 //player.getCurrentTime() for use to display an ad after x amount of time of video play.
 //player.getPlaybackQuality() retrives current video quality. have filters for sd/hd and skip to next video if not hd
