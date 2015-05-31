@@ -1,10 +1,30 @@
+.vidcover{
+    position: absolute;
+    z-index: 5;
+    background-color: rgba(27,27,27, 0.75);
+}
+
+
+.legible{
+    text-align:left;
+    font-family: "Muli", sans-serif;
+    font-weight: 400;
+}
+
 .buttonbox {
     color: #f8f8f8;
     text-align: center;
     font-family: 'Gloria Hallelujah', cursive;
     font-weight: 400;
-    margin-top: 80%;
-    font-size: 130px;
+    //margin-top: 80%;
+    font-size: 5rem;
+}
+
+@media(min-width: 768px){
+    .buttonbox{
+        font-size: 10rem;
+        margin-top:80%;
+    }
 }
 
 .video-container {
@@ -28,6 +48,7 @@
 .optionbar {
     color: #b9b9b9;
     font-size: 50px;
+    text-align: center;
 }
 
 .infomenu {
@@ -65,11 +86,86 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 80%;
+    width: 100%;
+    opacity:0.75;
 }
 
-#chanSelector {
-	margin-top: 2%;
+#channel-sel{
+    text-align: center;
 }
 
+#channel-sel a h3{
+    margin-top:10px;
+}
 
+@media(min-width: 768px){
+    #channel-sel{
+        padding-top:100px;
+    }
+}
+
+.input-group .channels{
+    display: block;
+    margin: 10px;
+}
+
+#myCarousel{
+    background: transparent;
+    min-height: inherit;
+}
+
+.item h*{
+    margin-top:10px;
+}
+
+.carousel-indicators{
+    bottom:0;
+}
+
+@media(min-width: 768px){
+    #myCarousel{
+        padding: 100px 10% 0 10%;
+    }
+
+    h3.responsive-txt{
+        font-size: 36px;
+        margin-top:20px;
+    }
+
+    h5.responsive-txt{
+        font-size: 20px;
+    }
+}
+
+#channel-submit{
+    font-size:30px;
+    position:relative;
+}
+
+#channel-submit span{
+    position:relative;
+    top:-10px;
+}
+
+#channel-sel label{
+    margin:10px;
+}
+
+.expandable{
+    margin-left:10px;
+}
+
+.trmrk{
+    font-size:10px;
+}
+
+.paypal-img{
+    width:60px;
+}
+
+@media(min-width: 768px){
+    .paypal-img{
+        width:150px;
+        margin-top:50px;
+    }
+}
