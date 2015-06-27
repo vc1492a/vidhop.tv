@@ -2,8 +2,18 @@
 
 	/**I'm tired I will comment this later...most likely... .. . . .
 	 */
-	$categories = explode(' ', $_GET['cats']);
+	//$categories = explode(' ', $_GET['cats']);
 	
+	$cats = $_GET['cat'];
+	$lens = $_GET['len'];
+	$categories = array();
+
+	foreach ($cats as $cat){
+		foreach ($lens as $len){
+			array_push($categories, $cat . $len);
+		}
+	}
+
 	$ids = array();
 	
 	$idfile = fopen('ids.txt', 'r');

@@ -13,35 +13,28 @@ $(document).ready(function() {
   it is long af because it also has to check for other open selectors and close them since this is an oaccordion menu
   **/
   var channelOptions = $("#channel-sel>a");
-
   channelOptions.click(function(){
     var thisOne = $(this);
     var thisOnesIcon = thisOne.children().last().children().last();
-
     thisOnesIcon.toggleClass("fa-caret-down");
     thisOnesIcon.toggleClass("fa-caret-right");
-
     if(thisOnesIcon.hasClass("fa-caret-down")){
-      //alert(channelOptions);
-      //var otherones = channelOptions.not(thisOne);
-
       channelOptions.each(function(){
-
         var otherOne = $(this);
-        
         if(!otherOne.is(thisOne)){
           var otherOnesIcon = otherOne.children().last().children().last();
-
           if(otherOnesIcon.hasClass("fa-caret-down")){
             otherOnesIcon.toggleClass("fa-caret-down");
             otherOnesIcon.toggleClass("fa-caret-right");
           } 
-        }            
+        }
       });
-
-
     }
-  })
+  });
+
+  $('#myCarousel').carousel({
+    interval: 10000
+  });
 
   var checkBtns = $(".check-btn");
 
