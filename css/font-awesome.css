@@ -180,12 +180,6 @@
 .fa-envelope-o:before {
   content: "\f003";
 }
-.fa-envelope-o:hover {
-  content: "\f003";
-  //color: #e62117;
-  //color: #31AA39;
-  color: #337ab7;
-}
 .fa-heart:before {
   content: "\f004";
 }
@@ -440,12 +434,6 @@
 .fa-info-circle:before {
   content: "\f05a";
 }
-.fa-info-circle:hover {
-  content: "\f05a";
-  //color: #e62117;
-  //color: #F7892A;
-  color: #337ab7;
-}
 .fa-crosshairs:before {
   content: "\f05b";
 }
@@ -570,12 +558,6 @@
 .fa-cogs:before {
   content: "\f085";
 }
-.fa-cogs:hover {
-  content: "\f085";
-  //color: #e62117;
-  //color: #FFC80B;
-  color: #337ab7;
-}
 .fa-comments:before {
   content: "\f086";
 }
@@ -620,11 +602,6 @@
 }
 .fa-phone:before {
   content: "\f095";
-}
-.fa-phone:hover {
-  content: "\f095";
-  //color: #E2591E;
-  color: #337ab7;
 }
 .fa-square-o:before {
   content: "\f096";
@@ -745,11 +722,6 @@
 .fa-bars:before {
   content: "\f0c9";
 }
-.fa-bars:hover {
-  content: "\f0c9";
-  //color: #e62117;
-  color: #337ab7;
-}
 .fa-list-ul:before {
   content: "\f0ca";
 }
@@ -815,12 +787,6 @@
 }
 .fa-envelope:before {
   content: "\f0e0";
-}
-.fa-envelope:hover {
-  content: "\f0e0";
-  //color: #E2591E;
-  //color: #31AA39;
-  color: #337ab7;
 }
 .fa-linkedin:before {
   content: "\f0e1";
@@ -929,18 +895,8 @@
 .fa-angle-left:before {
   content: "\f104";
 }
-.fa-angle-left:hover {
-  content: "\f104";
-  //color: #e62117;
-  color: #337ab7;
-}
 .fa-angle-right:before {
   content: "\f105";
-}
-.fa-angle-right:hover {
-  content: "\f105";
-  //color: #e62117;
-  color: #337ab7;
 }
 .fa-angle-up:before {
   content: "\f106";
@@ -1003,10 +959,6 @@
 }
 .fa-keyboard-o:before {
   content: "\f11c";
-}
-.fa-keyboard-o:hover {
-  content: "\f11c";
-  color: #337ab7;
 }
 .fa-flag-o:before {
   content: "\f11d";
@@ -1116,10 +1068,6 @@
 }
 .fa-ellipsis-v:before {
   content: "\f142";
-}
-.fa-ellipsis-v:hover {
-  content: "\f142";
-  color: #e62117;
 }
 .fa-rss-square:before {
   content: "\f143";
@@ -1256,10 +1204,6 @@
 }
 .fa-instagram:before {
   content: "\f16d";
-}
-.fa-instagram:hover {
-  content: "\f16d";
-  color: #E2591E;
 }
 .fa-flickr:before {
   content: "\f16e";

@@ -124,6 +124,7 @@ $(document).ready(function() {
 
 					count = checkCount(count);
 					player.loadVideoById(vids[selection]);
+					$('#set-blank').tab('show');
 				}
 			});
 

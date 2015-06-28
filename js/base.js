@@ -12,6 +12,9 @@ $(document).ready(function() {
   The following bit toggles the "expansion" arrow upon the clicking of a channel option selector,
   it is long af because it also has to check for other open selectors and close them since this is an oaccordion menu
   **/
+
+
+  /*
   var channelOptions = $("#channel-sel>a");
   channelOptions.click(function(){
     var thisOne = $(this);
@@ -30,7 +33,7 @@ $(document).ready(function() {
         }
       });
     }
-  });
+  });*/
 
   $('#myCarousel').carousel({
     interval: 10000
@@ -43,8 +46,9 @@ $(document).ready(function() {
     $(this).children().first().prop( "checked", function( i, val ) {return !val;});
   })
 
+  /*
   var wholeThing = $('#wholething');
-  $('#wholething').fadeIn(3000);
+  $('#wholething').fadeIn(3000);*/
 
   //get height of YT port, set all vidcover elements to this height
   var YTHeight = $("#player").parent().outerHeight();
@@ -66,140 +70,32 @@ $(document).ready(function() {
 $(window).bind("load", function() {
   //option bar
 
-   /**
-   var infoClick = $('#info');
-   var mailClick = $('#mail');
-   var cogClick = $('#cog');
-   var keyboardClick = $('#keyboard');
-
-   var allFour = $('#info, #mail, #cog, #keyboard');
-
-   infoClick.hide();
-   mailClick.hide();
-   cogClick.hide();
-   keyboardClick.hide();
-
-   //I want to find a way to highlight the symbols while the menu is shown
-   $('#infoclick').click(function(e) {
-    if(!infoClick.is(':visible')){
-        allFour.fadeOut(300);
-    }
-       infoClick.animate({
-           height: "toggle",
-           opacity: "toggle",
-       }, 1000);
-       e.preventDefault();
-   });
-
-   $('#mailclick').click(function(e) {
-    if(!mailClick.is(':visible')){
-        allFour.fadeOut(300);
-    }
-       mailClick.animate({
-           height: "toggle",
-           opacity: "toggle",
-       }, 1000);
-       e.preventDefault();
-   });
-
-   $('#cogclick').click(function(e) {
-    if(!cogClick.is(':visible')){
-        allFour.fadeOut(300);
-    }
-       cogClick.animate({
-           height: "toggle",
-           opacity: "toggle",
-       }, 1000);
-       e.preventDefault();
-   });
-
-   $('#keyboardclick').click(function(e) {
-       if(!keyboardClick.is(':visible')){
-           allFour.fadeOut(300);
-       }
-       keyboardClick.animate({
-           height: "toggle",
-           opacity: "toggle",
-       }, 1000);
-       e.preventDefault();
-   });
-  **/
-
-
-  /**
-   //interaction with channel controls
-   var chanButton = $('.chan');
-   var choice;
-
-   chanButton.click(function() {
-    choice = $(this);
-    //first check to see if it is the only active class
-    if (choice.hasClass('active')){
-        if (!noOtherActive(choice.parent())) {choice.toggleClass('active');}
-    }
-    else {choice.toggleClass('active');}
-   });
-
-   function noOtherActive(parent) {
-    var output = true;
-    parent.children().each( function() {
-        var child = $(this);
-        if (child.html() != choice.html() && child.hasClass('active')) {
-            output = false;
-        }
-    });
-
-    return output;
-   }**/
-
-   //hide mouse on timeout
    var idleMouseTimer;
    var forceMouseHide = false;
    $("body").css('cursor', 'none');
-   $("#wrapper").mousemove(function(ev) {
-           if(!forceMouseHide) {
-                   $("body").css('cursor', '');
-                   clearTimeout(idleMouseTimer);
-                   idleMouseTimer = setTimeout(function() {
-                           $("body").css('cursor', 'none');
-                           forceMouseHide = true;
-                           setTimeout(function() {
-                                   forceMouseHide = false;
-                           }, 200);
-                   }, 5000);
-           }
+   $(window).mousemove(function() {
+      clearTimeout(idleMouseTimer);
+      $("body").css('cursor', '');
+      idleMouseTimer = setTimeout(function() {
+              $("body").css('cursor', 'none');
+      }, 4000);
    });
 
-   //fade out
-   $('.buttonbox').fadeTo(0, '0.3').hover(function() {
-       $(this).fadeTo(500, 1);
-   }, function() {
-       $(this).fadeTo(500, '0.3');
-   });
+  $('.optionbar li').click(function(){
 
-   $('.optionbar').fadeTo(0, '0.3').hover(function() {
-       $(this).fadeTo(500, 1);
-   }, function() {
-       $(this).fadeTo(500, '0.3');
-   });
 
-   $('.thumbsmenuL').fadeTo(0, '0.3').hover(function() {
-       $(this).fadeTo(500, 1);
-   }, function() {
-       $(this).fadeTo(500, '0.3');
-   });
+    var theButton = $(this);
 
-   $('.thumbsmenuR').fadeTo(0, '0.3').hover(function() {
-       $(this).fadeTo(500, 1);
-   }, function() {
-       $(this).fadeTo(500, '0.3');
-   });
-   /**
-   $('.consider-donating').fadeTo(0, '0.3').hover(function() {
-          $(this).fadeTo(500, 1);
-      }, function() {
-          $(this).fadeTo(500, '0.3');
-      });
-  **/
+    if (theButton.hasClass('active')) {
+
+      setTimeout(function(){
+        $('#set-blank').tab('show');
+      },1);
+    }
+  });
+
+  $('#channel-sel label, #channel-sel input').click(function(e){
+    e.stopPropagation();
+  });
 
 });

@@ -1,3 +1,7 @@
+body{
+    font-family: "Muli", sans-serif;
+}
+
 .searchbox {
   //color: white;
   background-color: #f8f8f8;
@@ -14,7 +18,7 @@
 
 #wholething{
     //background-image:url('some-image.jpg');
-    display:none;
+    //display:none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -29,7 +33,6 @@
     display: block;
     text-align: center;
     color: #f8f8f8;
-    font-family: 'Gloria Hallelujah', cursive;
     font-weight: 400;
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +56,6 @@
     display: block;
     text-align: center;
     color: #f8f8f8;
-    font-family: 'Gloria Hallelujah', cursive;
     font-weight: 400;
     margin-left: auto;
     margin-right: auto;
@@ -75,7 +77,6 @@
 
 .mailchimp {
     color: #1b1b1b;
-    font-family: 'Gloria Hallelujah', cursive;
     font-weight: 400;
     font-size: 14px;
     height: auto;
@@ -88,7 +89,6 @@
 	text-align: center;
     color: gray;
     background-color: #1b1b1b;
-    font-family: 'Gloria Hallelujah', cursive;
     font-weight: 400;
     font-size: 45px;
     height: auto;
@@ -100,18 +100,8 @@
 }
 
 .legible {
-    font-family: 'Gloria Hallelujah', cursive;
     font-weight: 400;
-    text-align: center;
     margin-top: 2%;
-}
-
-.go {
-    font-family: 'Gloria Hallelujah', cursive;
-    font-weight: 400;
-    text-align: center;
-    font-size: 50px !important;
-    text-decoration: none;
 }
 
 //this isnt working right
