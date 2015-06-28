@@ -94,6 +94,10 @@ $(window).bind("load", function() {
     }
   });
 
+  $("#infoclick").click(function(){
+    $("#myCarousel").carousel(0);
+  });
+
   $('#channel-sel label, #channel-sel input').click(function(e){
     e.stopPropagation();
   });
