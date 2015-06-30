@@ -21,7 +21,7 @@ function channel_query($chname) {
 	. 'part=id&fields=items%2Fid&'
 	. 'channelId=' . $chname . '&'
 	. 'type=video&maxResults=50&'
-	. 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww'; /** 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I', 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww' **/
+	. 'key=AIzaSyAQ2VBcrQUnBS3vwQlfNZxBWssZroIIRco'; /** 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I', 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww', 'key=AIzaSyAQ2VBcrQUnBS3vwQlfNZxBWssZroIIRco' **/
 	
 	return $chquery;
 };
