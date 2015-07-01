@@ -1,39 +1,5 @@
 $(document).ready(function() {
 
-  //hide any elements that will be loaded after the page finishes loaded all other elements.
-
-  /**
-  var allFour = $('#info, #mail, #cog, #keyboard');
-  allFour.hide();
-  **/
-
-
-  /**
-  The following bit toggles the "expansion" arrow upon the clicking of a channel option selector,
-  it is long af because it also has to check for other open selectors and close them since this is an oaccordion menu
-  **/
-
-
-  /*
-  var channelOptions = $("#channel-sel>a");
-  channelOptions.click(function(){
-    var thisOne = $(this);
-    var thisOnesIcon = thisOne.children().last().children().last();
-    thisOnesIcon.toggleClass("fa-caret-down");
-    thisOnesIcon.toggleClass("fa-caret-right");
-    if(thisOnesIcon.hasClass("fa-caret-down")){
-      channelOptions.each(function(){
-        var otherOne = $(this);
-        if(!otherOne.is(thisOne)){
-          var otherOnesIcon = otherOne.children().last().children().last();
-          if(otherOnesIcon.hasClass("fa-caret-down")){
-            otherOnesIcon.toggleClass("fa-caret-down");
-            otherOnesIcon.toggleClass("fa-caret-right");
-          } 
-        }
-      });
-    }
-  });*/
 
   $('#myCarousel').carousel({
     interval: 10000
@@ -45,10 +11,6 @@ $(document).ready(function() {
     $(this).toggleClass("active");
     $(this).children().first().prop( "checked", function( i, val ) {return !val;});
   })
-
-  /*
-  var wholeThing = $('#wholething');
-  $('#wholething').fadeIn(3000);*/
 
   //get height of YT port, set all vidcover elements to this height
   var YTHeight = $("#player").parent().outerHeight();
@@ -68,6 +30,9 @@ $(document).ready(function() {
 
 //these elements load after the window is finished loading all other elements.
 $(window).bind("load", function() {
+
+  $(".buttonbox, .optionbar, .bottom-message").addClass("fade-in");
+
   //option bar
 
    var idleMouseTimer;

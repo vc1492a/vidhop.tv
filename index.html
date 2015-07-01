@@ -12,22 +12,22 @@
     <meta name="superfish" content="nofish">
 
     <!--CSS-->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/youtube.css">
-    <link rel="stylesheet" href="css/grid.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/youtube.min.css">
+    <!--<link rel="stylesheet" href="css/grid.css">-->
 
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Gloria+Hallelujah|Handlee|Muli' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Muli' rel='stylesheet' type='text/css'>
 
     <!--javascript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>-->
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/base.js"></script>
-    <script src="js/YT_feed.js"></script>
-    <script src="js/YT_shortcuts.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/base.min.js"></script>
+    <script src="js/YT_feed.min.js"></script>
+    <!--<script src="js/YT_shortcuts.js"></script>-->
 
     <!--favicon-->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -60,7 +60,7 @@
 
 
 </head>
-<body id="wholething">
+<body>
     <!--[if lt IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
@@ -68,7 +68,7 @@
 
     <div class="container-fluid">
 
-        <ul class="nav optionbar">
+        <ul class="nav optionbar text-center">
             
             <li><i data-toggle="tab" href="#info" class="fa fa-info-circle" id="infoclick" alt="information"></i></li>
             
@@ -82,7 +82,7 @@
 
         </ul>  
 
-        <div class="tab-content row" id="menu-container">
+        <div class="tab-content row menu-container text-center">
 
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 tab-pane infomenu vidcover" id="info">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -107,7 +107,7 @@
 
                         <div class="item">
                             <h3 class="responsive-txt accent">what</h3>
-                            <h5 class="legible responsive-txt">
+                            <h5 class="responsive-txt">
 
                                 <!--vidhop.tv brings quality documentaries from around the web to you. forget searching YouTube for a cool documentary to watch. explore videos with vidhop.tv.-->
 
@@ -117,7 +117,7 @@
 
                         <div class="item">
                             <h3 class="responsive-txt accent">how</h3>
-                            <h5 class="legible responsive-txt">
+                            <h5 class="responsive-txt">
 
                                 <!--use the next and previous keys to cycle through documentaries. skipped one you liked? just click the previous key-->
 
@@ -128,68 +128,22 @@
 
                         <div class="item">
                             <h3 class="responsive-txt accent">when</h3>
-                            <h5 class="legible responsive-txt"> 24/7. quit waiting for that documentary on cable. we're a website, so drop by whenever you'd like!</h5>
+                            <h5 class="responsive-txt"> 24/7. Quit waiting for that documentary on cable. We're a website, so drop by whenever you'd like!</h5>
                         </div>
 
                         <div class="item">
-                            <h3 class="responsive-tx accent">why</h3>
-                            <h5 class="legible responsive-txt"> 
-                                the internet is full of awesome videos, but tv is a more convenient option for many people. we want to change this!
+                            <h3 class="responsive-txt accent">why</h3>
+                            <h5 class="responsive-txt"> 
+                                The internet is full of awesome videos, but TV is a more convenient option for many people. We want to change this!
                             </h5>
                         </div>                        
-
-
-                       <!-- <div class="item">
-                            <h3 class="responsive-txt">there's more?</h3>
-                            <h5 class="legible responsive-txt">
-
-                                yes! new features are added regularly. come back and discover new ways to enjoy. the best documentaries the web has to offer.
-
-                            </h5>
-                        </div>-->
-
-
                     </div>
-
                 </div>
-
-                <!--<div>
-                    <h2>vidhop.tv: discover documentaries, discover our universe, discover yourself.</h2>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h2>what</h2>
-                            <h4 class="legible">vidhop.tv brings quality documentaries from around the web to you. forget searching YouTube for a cool documentary to watch. explore videos with vidhop.tv.</h4>
-                            <br>
-                        </div>
-                        <div class="col-sm-6">
-                            <h2>how</h2>
-                            <h4 class="legible">use the next and previous keys to cycle through documentaries. skipped one you liked? just click the previous key</h4>
-                            <br>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h2>when</h2>
-                            <h4 class="legible"> 24/7. quit waiting for that documentary on cable. we're a website, so drop by whenever you'd like!</h4>
-                            <br>
-                        </div>
-                        <div class="col-sm-6">
-                            <h2>there's more?</h2>
-                            <h4 class="legible">yes! new features are added regularly. come back and discover new ways to enjoy. the best documentaries the web has to offer.</h4>
-                            <br>
-                        </div>
-                    </div>
-                    <br>
-                </div>-->
-
-
             </div>
 
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 tab-pane cogmenu vidcover" id="cog">
 
-                <form id="channel-sel" action="#" type="get">
+                <form id="channel-sel" class="text-center" action="#" type="get">
 
 
                     <div class="btn-group" style="margin: 20px 0">
@@ -252,7 +206,7 @@
             <div id="pop-up" style="display:none;" class="col-xs-12 col-sm-8 col-sm-offset-2 vidcover">
 
                 <div class="consider-donating">
-                    <h5 class="responsive-txt">like vidhop.tv? consider donating and support continuous development. click the icon below to donate with PayPal!</h5>
+                    <h5 class="responsive-txt">Like <span class="accent">vidhop.tv</span>? Click below to donate with PayPal. Help keep <span class="accent">vidhop.tv</span> on the internet!</h5>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick">
                         <input type="hidden" name="hosted_button_id" value="UAJ5Z256MDP2J">
@@ -268,7 +222,7 @@
                         </div>
                         <div class="clearfix visible-sm-block"></div>
                         <div class="col-xs-6 col-sm-12">
-                            <h3 class="responsive-txt">vidhop.tv<sup class="trmrk">tm</sup><i class="fa fa-tm"></i></h3>
+                            <h3 class="responsive-txt accent">vidhop.tv<sup class="trmrk">tm</sup><i class="fa fa-tm"></i></h3>
                         </div>
                     </div>
                 </div>  
@@ -277,7 +231,6 @@
         </div>
 
             
-
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-push-2 video-container">
                 <div class="screen main" id="player" alt="video player">
@@ -285,13 +238,13 @@
             </div>
             <div class="clearfix visible-xs-block"></div>
             <div class="col-xs-6 col-sm-2 col-sm-pull-8">
-                <div class="buttonbox" id="fade">
+                <div class="buttonbox text-center" id="fade">
                     <a id="prev"><i class="fa fa-angle-left" alt="previous video"></i></a>
                     <h3 id="prevtext" class="accent">previous</h3>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-2">
-                <div class="buttonbox">
+                <div class="buttonbox text-center">
                     <a id="next"><i class="fa fa-angle-right" alt="next video"></i></a>
                     <h3 id="nexttext" class="accent">next</h3>
                 </div>
@@ -301,13 +254,13 @@
         <br><br>
     </div>
     
-    <div class="text-center" style="color:#999">
+    <div class="text-center bottom-message" style="color:#999">
         <h2 class="accent">Have a suggestion? Shoot us an email!</h2>
         <br>
         <!--"nofollow" tells search engines that the links should not be followed-->
-        <h4><a href="mailto:ts@vidhop.tv" rel="nofollow">Taylor Stevens</a>: co-founder</h4>
+        <h4><a href="mailto:ts@vidhop.tv" rel="nofollow"><u>Taylor Stevens</u></a>: co-founder</h4>
         <br>
-        <h4><a href="mailto:vc@vidhop.tv" rel="nofollow">Valentino Constantinou</a>: co-founder</h4>
+        <h4><a href="mailto:vc@vidhop.tv" rel="nofollow"><u>Valentino Constantinou</u></a>: co-founder</h4>
         <br><br>
     </div>
 

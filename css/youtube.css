@@ -1,147 +1,49 @@
-.vidcover{
-    position: absolute;
-    z-index: 5;
-    background-color: rgba(27,27,27, 0.75);
-}
-
-
-.legible{
-    text-align:left;
-    font-weight: 400;
-}
-
-.buttonbox {
-    text-align: center;
-    font-weight: 400;
-    //margin-top: 80%;
-    font-size: 5rem;
-    transition: color, 0.3s;
-    -webkit-transition: color, 0.3s;
-}
+/**************************typography and color***************************/
 
 .accent{
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-.buttonbox, .buttonbox a{
+.bannerimage {
+    width: 50px;
+    height: auto;
+}
+
+@media(min-width: 768px){
+    .bannerimage {
+        width: 140px;
+        height: auto;
+    }
+}
+
+body{
+    font-family: "Muli", sans-serif;
+    color: #f8f8f8;
+    background-color: #1b1b1b;
+}
+
+.buttonbox, .optionbar > li{
+    transition: color, 0.3s;
+    -webkit-transition: color, 0.3s;
+}
+
+.buttonbox, .optionbar > li, .bottom-message{
+    color: #444;
+}
+
+.buttonbox a{
     color: inherit;
 }
 
-.buttonbox:hover{
+.buttonbox:hover, .optionbar > li:hover{
     color: #999;
 }
 
-@media(min-width: 768px){
-    .buttonbox{
-        font-size: 10rem;
-        margin-top:80%;
-    }
-}
-
-.video-container {
-	padding-bottom:45%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;
-	margin-left: auto;
-	margin-right: auto;
-	//text-align: center;
-}
-
-.video-container iframe, .video-container object, .video-container embed .video-container div{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-}
-
-.optionbar {
-    color: #484848;
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 1.5%;
-}
-
-.infomenu {
-    color: #f8f8f8;
-    text-align: center;
-    font-family: "Muli", sans-serif;
-    font-weight: 400;
-}
-
-.mailmenu {
-    color: #f8f8f8;
-    text-align: center;
-    font-family: "Muli", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-}
-
-.cogmenu {
-    color: #f8f8f8;
-    text-align: center;
-    font-family: "Muli", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-}
-
-.thumbsmenu {
-    color:#b9b9b9;
-    text-align: center;
-    font-size: 60px;
-}
-
-.channels {
-    margin: 2%;
-}
-
-.keyboard {
-    //text-align: center;
-    margin: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 100%;
-    opacity:0.75;
-}
-
-#channel-sel{
-    text-align: center;
-}
-
-#channel-sel a h3{
-    margin-top:10px;
+#channel-sel label{
+    color: #333;
 }
 
 @media(min-width: 768px){
-    #channel-sel{
-        padding-top:100px;
-    }
-}
-
-.input-group .channels{
-    display: block;
-    margin: 10px;
-}
-
-#myCarousel{
-    background: transparent;
-    min-height: inherit;
-}
-
-.item h*{
-    margin-top:10px;
-}
-
-.carousel-indicators{
-    bottom:0;
-}
-
-@media(min-width: 768px){
-    #myCarousel{
-        padding: 100px 10% 0 10%;
-    }
 
     h3.responsive-txt{
         font-size: 36px;
@@ -153,69 +55,37 @@
     }
 }
 
-#channel-submit{
-    font-size:30px;
-    position:relative;
+.keyboard {
+    opacity:0.75;
 }
 
-#channel-submit span{
-    position:relative;
-    top:-10px;
-}
-
-#channel-sel label{
-    margin:10px;
-}
-
-.expandable{
-    margin-left:10px;
-}
-
-.trmrk{
-    font-size:10px;
-}
-
-.paypal-img{
-    width:60px;
-}
-
-@media(min-width: 768px){
-    .paypal-img{
-        width:150px;
-        margin-top:50px;
-    }
+#myCarousel{
+    background: transparent;
 }
 
 .optionbar > li.active {
     color: #337ab7;
 }
 
-.optionbar > li.active:hover {
-    color: #5CA0DB;
+.trmrk{
+    font-size:10px;
 }
 
-.optionbar > li{
-    color: inherit;
-    transition: color 0.3s;
-    -webkit-transition: color 0.3s;
+.vidcover{
+    background-color: rgba(27,27,27, 0.9);
 }
 
-.optionbar > li:hover{
-    color: #999;
+/***************************size and position***********************/
+
+.buttonbox {
+    font-size: 5rem;
 }
 
-.nav > li {
-    display: inline-block;
-}
-
-/*
-#channel-sel .dropdown{
-    isplay: inline-block;
-}*/
-
-#channel-sel label{
-    color: #333;
-    cursor: pointer;
+@media(min-width: 768px){
+    .buttonbox{
+        font-size: 10rem;
+        margin-top:80%;
+    }
 }
 
 .carousel-indicators{
@@ -228,3 +98,113 @@
     height: 20px;
     width: 20px;
 }
+
+@media(min-width: 768px){
+    #channel-sel{
+        padding-top:100px;
+    }
+}
+
+#channel-sel label{
+    margin:10px;
+}
+
+.keyboard {
+    width: 100%;
+}
+
+#myCarousel{
+    min-height: inherit;
+}
+
+@media(min-width: 768px){
+    #myCarousel{
+        padding: 100px 10% 0 10%;
+    }
+}
+
+.nav.optionbar > li {
+    display: inline-block;
+}
+
+.optionbar {
+    font-size: 50px;
+}
+
+.paypal-img{
+    width:120px;
+}
+
+@media(min-width: 768px){
+    .paypal-img{
+        width:200px;
+        margin-top:50px;
+    }
+}
+
+.vidcover{
+    position: absolute;
+    z-index: 5;
+}
+
+/*************************fade and hover fx*************************/
+
+.buttonbox:hover, .optionbar > li:hover, #channel-sel label:hover{
+    cursor: pointer;
+}
+
+@keyframes fade{
+    0%{opacity: 0;}
+    100%{opacity: 1.0;}
+}
+
+
+@-webkit-keyframes fade{
+    0%{opacity: 0;}
+    100%{opacity: 1.0;}
+}
+
+.buttonbox, .optionbar, .bottom-message {
+    opacity:0;
+}
+
+/*this class gets added to the above elements after loading*/
+.fade-in{
+    opacity:1.0;
+    animation: fade 1s;
+    -webkit-animation: fade 1s;
+}
+
+/***********************************misc**********************************/
+
+.video-container {
+	padding-bottom:45%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.video-container iframe, .video-container object, .video-container embed .video-container div{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+/*
+.fourohfour {
+    text-align: center;
+    color: gray;
+    background-color: #1b1b1b;
+    font-weight: 400;
+    font-size: 45px;
+    height: auto;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}*/
