@@ -15,6 +15,7 @@
 
     <!--CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-tour.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/youtube.min.css">
     <!--<link rel="stylesheet" href="css/grid.css">-->
 
@@ -22,18 +23,21 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Muli' rel='stylesheet' type='text/css'>
 
+    <!--favicon-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
     <!--javascript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>-->
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/base.min.js"></script>
     <script src="js/YT_feed.min.js"></script>
-    <!--<script src="js/YT_shortcuts.js"></script>-->
 
-    <!--favicon-->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="js/bootstrap-tour.min.js"></script>
+    <script src="js/base.min.js"></script>
+    <!--<script src="js/YT_shortcuts.js"></script>-->
 
     <!--Google Analytics-->
     <script>
@@ -60,6 +64,12 @@
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
 
+    <style type="text/css">
+        .tour-tour{
+            color:#333;
+        }
+    </style>
+
 
 </head>
 <body>
@@ -71,8 +81,11 @@
     <div class="container-fluid">
 
         <ul class="nav optionbar text-center">
+
+
+            <li><i data-toggle="tooltip" title="<b>Take the tour!</b>" id="bs-tour" class="fa fa-info-circle" alt="information"></i></li>
             
-            <li><i data-toggle="tab" href="#info" class="fa fa-info-circle" id="infoclick" alt="information"></i></li>
+            <!--<li><i data-toggle="tab" href="#info" class="fa fa-info-circle" id="infoclick" alt="information"></i></li>-->
             
             <li><i data-toggle="tab" href="#cog" class="fa fa-cogs" id="cogclick" alt="filters and settings"></i></li>
             
@@ -86,94 +99,27 @@
 
         <div class="tab-content row menu-container text-center">
 
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 tab-pane infomenu vidcover" id="info">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                        <li data-target="#myCarousel" data-slide-to="4"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner text-left" role="listbox">
-                        <div class="item active text-center">
-                            <h3 class="responsive-txt" style="margin-top:30px;">
-
-                                <!--vidhop.tv: discover documentaries, discover our universe, discover yourself.-->
-                                <span class="h1 accent">vidhop.tv</span><br> Internet is the new cable! Don't wait for something interesting to come on. Watch now with vidhop.tv!
-                            </h3>
-                        </div>
-
-                        <div class="item">
-                            <h3 class="responsive-txt accent">what</h3>
-                            <h5 class="responsive-txt">
-
-                                <!--vidhop.tv brings quality documentaries from around the web to you. forget searching YouTube for a cool documentary to watch. explore videos with vidhop.tv.-->
-
-                            <span class="accent">vidhop.tv</span> provides quick and easy access to videos you will love. Just pick a channel, sit back, and relax.
-                            </h5>
-                        </div>
-
-                        <div class="item">
-                            <h3 class="responsive-txt accent">how</h3>
-                            <h5 class="responsive-txt">
-
-                                <!--use the next and previous keys to cycle through documentaries. skipped one you liked? just click the previous key-->
-
-                                Use the <i class="fa fa-cogs"></i> menu to pick channels and the <i class="fa fa-chevron-left"></i>/<i class="fa fa-chevron-right"></i> buttons to skip around.
-
-                            </h5>
-                        </div>
-
-                        <div class="item">
-                            <h3 class="responsive-txt accent">when</h3>
-<<<<<<< HEAD
-                            <h5 class="responsive-txt"> 24/7. Quit waiting for that documentary on cable. We're a website, so drop by whenever you'd like!</h5>
-                        </div>
-
-                        <div class="item">
-                            <h3 class="responsive-txt accent">why</h3>
-                            <h5 class="responsive-txt"> 
-                                The internet is full of awesome videos, but TV is a more convenient option for many people. We want to change this!
-=======
-                            <h5 class="legible responsive-txt"> 24/7. Vidhop.tv is on around the clock, every day of the year.</h5>
-                        </div>
-
-                        <div class="item">
-                            <h3 class="responsive-tx accent">why</h3>
-                            <h5 class="legible responsive-txt"> 
-                                The internet is full of awesome videos, but tv is inconvenient and videos are scattered all over the web. Vidhop.tv brings everything to you!
->>>>>>> 85ac66158f1a09819ca3066fb445f1e62b7b4110
-                            </h5>
-                        </div>                        
-                    </div>
-                </div>
-            </div>
-
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 tab-pane cogmenu vidcover" id="cog">
 
                 <form id="channel-sel" class="text-center" action="#" type="get">
 
-
                     <div class="btn-group" style="margin: 20px 0">
-                        <div class="btn-group">
-                            <button id="channel-btn-1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Channels
+                        <div class="btn-group" id="channel-container">
+                            <button id="channel-btn" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Channels
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="channel-btn">
-                                <li><label><input name="cat[]" type="checkbox" value="nat" checked/> Nature</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="sci" checked/> Science</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="war" checked/> War</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="auto" checked/> Automotive</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="mus" checked/> Music</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="his" checked/> History</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="soc" checked/> Social</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="food" checked/> Food</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="tra" checked/> Travel</label></li>
-                                <li><label><input name="cat[]" type="checkbox" value="toon" checked/> Cartoons</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="all" checked/> All</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="nat" /> Nature</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="sci" /> Science</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="war" /> War</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="auto" /> Automotive</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="mus" /> Music</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="his" /> History</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="soc" /> Social</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="food" /> Food</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="tra" /> Travel</label></li>
+                                <li><label><input name="cat[]" type="checkbox" value="toons" /> Cartoons</label></li>
                                 <li><label><input name="cat[]" type="checkbox" value="misc"/> Misc</label></li>
                             </ul>
                         </div>
@@ -257,8 +203,8 @@
                 </div>
             </div>
             <div class="clearfix visible-xs-block"></div>
-            <div class="col-xs-6 col-sm-2 col-sm-pull-8">
-                <div class="buttonbox text-center" id="fade">
+            <div id="back-n-forth" class="col-xs-6 col-sm-2 col-sm-pull-8">
+                <div class="buttonbox text-center">
                     <a id="prev"><i class="fa fa-angle-left" alt="previous video"></i></a>
                     <h3 id="prevtext" class="accent">previous</h3>
                 </div>
