@@ -11,12 +11,7 @@
 //the player fails to load.
 
 $(document).ready(function() {
-    //load YT player iframe API
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api/";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+    
     //option buttons
 	var chanSelector = $('#chanSelector');
 	var sendChoices = $('#sendChoices');
@@ -30,15 +25,42 @@ $(document).ready(function() {
 	//we can change this. start with short videos
 	query = "cat[]=sci&cat[]=nat&len[]=short";
 
-	//get initial set of video Ids
-	$.ajax({
-		url: "php/send_ids.php",
-		data: query,
-		success: function(data) {
-			vids = $.makeArray(JSON.parse(data));
-			selection = 0;
-		}
-	});
+	function getVids() {
+
+		var defer = $.Deferred();
+
+		//get initial set of video Ids
+		$.ajax({
+			url: "php/send_ids.php",
+			data: query,
+			success: function(data) {
+				defer.resolve(vids = $.makeArray(JSON.parse(data)));
+				//selection = 0;
+			},
+			error: function(err){
+				defer.reject(err);
+			}
+		});
+
+		return defer.promise();
+	}
+
+	getVids()
+		.done(function(vids){
+
+			window.vids = vids
+
+			//load YT player iframe API
+		    var tag = document.createElement('script');
+		    tag.src = "https://www.youtube.com/iframe_api/";
+		    var firstScriptTag = document.getElementsByTagName('script')[0];
+		    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		})
+		.fail(function(err){
+			console.log(err);
+		})
+
 
 	//Create a YT player after the API downloads
 	var player;
