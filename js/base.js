@@ -1,5 +1,84 @@
 $(document).ready(function() {
 
+  $("#bs-tour").tooltip({
+    placement: 'bottom auto',
+    trigger: 'manual',
+    container: 'body',
+    html: true
+  });
+
+  var BSTour = new Tour({
+    storage: false,
+    onStart: function(){$("#bs-tour").addClass("active")},
+    onEnd: function(){$("#bs-tour").removeClass("active")}
+  });
+
+  BSTour.addStep({
+    orphan: true,
+    content: "Follow along to see how <span class='accent'>vidhop.tv</span> works."
+  });
+
+  BSTour.addStep({
+    onShow: function(){
+      $("#cogclick").tab("show");
+    },
+    onShown: function(){
+      $("#channel-container").addClass('open');
+    },
+    onHide: function(){
+      $("#set-blank").tab("show");
+    },
+    placement: 'top',
+    element: "#channel-sel>.btn-group",
+    content: "To choose a channel, you select one or more subjects and click <span class='accent'>go</span>",
+  });
+
+  BSTour.addStep({
+    onShow: function(){
+      $(".buttonbox").addClass("active");
+    },
+    onHide: function(){
+      $(".buttonbox").removeClass("active");
+    },
+    placement: "top",
+    element: "#back-n-forth",
+    content: "Use the next and previous buttons to quickly find what you want to watch"
+  });
+
+  BSTour.addStep({
+    onShow: function(){
+      $("#mailclick").tab("show")
+    },
+    onHide: function(){
+      $("#set-blank").tab("show");
+    },
+    placement: 'bottom',
+    element: "#mc-embedded-subscribe-form",
+    content: "Join the mailling list if you want to hear about new features and content"
+  });
+
+  BSTour.addStep({
+    placement: 'top',
+    element: ".bottom-message",
+    content: "Feel free to email us with any questions, suggestions, or complaints"
+  });
+
+
+  $("#bs-tour").click(function(){
+
+    $(this).tooltip("hide");
+
+    if(!BSTour.ended()){
+      BSTour.init();
+      BSTour.start();   
+    }
+
+    else{
+      BSTour.restart();
+    }
+   
+
+  });
 
   $('#myCarousel').carousel({
     interval: 10000
@@ -30,6 +109,16 @@ $(document).ready(function() {
 
 //these elements load after the window is finished loading all other elements.
 $(window).bind("load", function() {
+
+  setTimeout(function(){
+    $("#bs-tour").tooltip('show');
+    setTimeout(function(){
+      $("#bs-tour").tooltip('hide');
+    }, 10000);
+
+  },500)
+
+ 
 
   $(".buttonbox, .optionbar, .bottom-message").addClass("fade-in");
 

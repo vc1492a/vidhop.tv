@@ -35,7 +35,7 @@ body{
     color: inherit;
 }
 
-.buttonbox:hover, .optionbar > li:hover{
+.buttonbox:hover, .buttonbox:focus, .buttonbox.active, .optionbar > li:hover{
     color: #999;
 }
 
@@ -63,8 +63,30 @@ body{
     background: transparent;
 }
 
-.optionbar > li.active {
+.optionbar > li.active, .optionbar > li > .active {
     color: #337ab7;
+}
+
+.tooltip.left .tooltip-arrow{
+    border-left-color: #337ab7;
+}
+
+.tooltip.right .tooltip-arrow{
+    border-right-color: #337ab7;
+}
+
+.tooltip.top .tooltip-arrow{
+    border-top-color: #337ab7;
+}
+
+.tooltip.bottom .tooltip-arrow{
+    border-bottom-color: #337ab7;
+}
+
+.tooltip-inner{
+    background-color:#1b1b1b;
+    color:#337ab7;
+    border: 2px solid #337ab7;
 }
 
 .trmrk{
@@ -74,6 +96,8 @@ body{
 .vidcover{
     background-color: rgba(27,27,27, 0.9);
 }
+
+
 
 /***************************size and position***********************/
 
@@ -103,6 +127,10 @@ body{
     #channel-sel{
         padding-top:100px;
     }
+}
+
+#channel-sel{
+    margin-top:30px;
 }
 
 #channel-sel label{
@@ -176,6 +204,11 @@ body{
 }
 
 /***********************************misc**********************************/
+
+.dropdown-menu{
+    max-height: 250px;
+    overflow-y: scroll;
+}
 
 .video-container {
 	padding-bottom:45%;

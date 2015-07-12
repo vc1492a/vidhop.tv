@@ -1,5 +1,8 @@
 <?php
 
+#so it doesn't time out
+ini_set('max_execution_time', 300);
+
 function channel_query($chname) {
 	
 	/**This function takes a YT channel ID and returns a 
@@ -21,7 +24,7 @@ function channel_query($chname) {
 	. 'part=id&fields=items%2Fid&'
 	. 'channelId=' . $chname . '&'
 	. 'type=video&maxResults=50&'
-	. 'key=AIzaSyAQ2VBcrQUnBS3vwQlfNZxBWssZroIIRco'; /** 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I', 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww', 'key=AIzaSyAQ2VBcrQUnBS3vwQlfNZxBWssZroIIRco' **/
+	. 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I'; /** 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I', 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww', 'key=AIzaSyAQ2VBcrQUnBS3vwQlfNZxBWssZroIIRco' **/
 	
 	return $chquery;
 };
@@ -46,7 +49,7 @@ function playlist_query($plname) {
 	. 'maxResults=50&'
 	. 'playlistId=' . $plname . '&'
 	. 'fields=items%2FcontentDetails&'
-	. 'key=AIzaSyA-4lY7Vc2IYSjdjnoH836HabdNMjrK8Ww';
+	. 'key=AIzaSyArTyW_uUWZ2ZGSXSvsbk1qWJuT9Z9Cs_I';
 	
 	return $plquery;
 }
@@ -72,6 +75,10 @@ function playlist_query($plname) {
 
 #initialize array to contain the video ids
 $ids = array();
+
+#making an array index for all vids
+$all_name = str_pad('allshort', 11, ' ');
+$ids['allshort'] = array($all_name);
  
  /**gonna have a lot of rulez for the file formatting, need to put a super kewl description here**/
 $sources = fopen('sources.txt','r');
@@ -103,7 +110,9 @@ while(! feof($sources)) {
 			foreach ($result->items as $video) {
 				
 				#push the videoID parameter of each item into $ids
-				array_push($ids[$channel], $video->contentDetails->videoId);			
+				array_push($ids[$channel], $video->contentDetails->videoId);
+
+				array_push($ids['allshort'], $video->contentDetails->videoId);			
 			}
 	}
 	
@@ -117,10 +126,15 @@ while(! feof($sources)) {
 			foreach ($result->items as $video) {
 				
 				#push the videoID parameter of each item into $ids
-				array_push($ids[$channel], $video->id->videoId);			
+				array_push($ids[$channel], $video->id->videoId);
+
+				array_push($ids['allshort'], $video->id->videoId);			
 			}
 	}
 }
+
+$ids['alllong'] = $ids['allshort'];
+$ids['alllong'][0] = str_pad('alllong', 11, ' ');
 
 #get lengths of each list
 $lengths = array();

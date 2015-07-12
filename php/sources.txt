@@ -13,11 +13,11 @@ PLZcwAlcdZRGuYRHPm4c99MzXg48HrE6Ow
 PLcbeKJ8PzFb_q6c9Y6rpyn5l7brrz8lVE
 PLpWCFDSTg8dtaMNcR5Ea7JV9HfOebXYiH
 
-#natureshort
+#natshort
 PLX67j_WvvdlotFly4FaGcp0L9q6VRlz47
 PL5A42E356A99E2772
 
-#naturelong
+#natlong
 PLLgqOez346ZPKFQTobmmFMd3bIdWOEabR
 PL66rc6rMkuadKawGwt9pYSq_yVJ1dnsyp
 UC_I8eRZs6ZpFAepsIug1qBQ
@@ -68,19 +68,19 @@ PLfYWPO2HhoC3GWwRs2dFYrIWjwYqVJsIF
 PL06AE1E1E9FDDF981
 PLCEDB8403F2455789
 
-#historyshort
+#hisshort
 UCPdYgwlE2fw_T4OOXhW9ClQ
 
-#historylong
+#hislong
 PLAGggYDwCYhPQJC8p0pwHKn-yqjSaXCf1
 PL_jFbqOSEqaKU4fClblf8aI4e1Dc4hWgD
 PLAt2stDhj8ZnSzgoFuYvpgH6BZqBAKq0e
 PLyswKou_L86j1VzIR3a9kKEzfEqqZslvX
 PL85CE275E962BCFCF
 
-#socialshort
+#socshort
 
-#sociallong
+#soclong
 PLxFAzPeu9xpws23e0lSzf83Nknf3UiVUH
 PLz79J-reDQS5JQ9tf4zags00KT9YZbHkv
 PL-CYyEqM7OiOZgq1RGoj4YI-4CrhxS_MW
@@ -117,7 +117,7 @@ PLZVMGCh7sZUh_jIqrYMKYyyPNJtpng_ZC
 #travelshort
 UCKfIPsrxvd_jWddzEv1PfSQ
 
-#travellong
+#tralong
 PLc3im5QuRblBT0z00uSnZbLfUxpLK2QHM
 UCFi0rQOCCw1jDxS9_UdsQ0A
 PLgviSs0guR8LmNPZbluhI6meXCssaD4jZ
