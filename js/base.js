@@ -60,7 +60,7 @@ $(document).ready(function() {
   BSTour.addStep({
     placement: 'top',
     element: ".bottom-message",
-    content: "Feel free to email us with any questions, suggestions, or complaints"
+    content: "Have any suggestions or feedback? Please fill out this short survey!"
   });
 
 
