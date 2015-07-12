@@ -42,9 +42,7 @@ Visitors can jump through the playlist using the on-screen keys or keyboard shor
 
 ### Future Updates
 
-- fix load bug (mostly in Chrome but also occurs in Safari and Firefox)
 - HTTPS and SSL, vidhop.tv goes secure
-- info and support emails
 - privacy policy and terms of service
 - links to social media accounts
 - MTV mode (what MTV used to be)
