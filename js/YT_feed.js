@@ -23,7 +23,7 @@ $(document).ready(function() {
 	var count = 0;
 
 	//we can change this. start with short videos
-	query = "cat[]=sci&cat[]=nat&len[]=short";
+	query = "cat[]=all&len[]=short";
 
 	function getVids() {
 
@@ -141,6 +141,7 @@ $(document).ready(function() {
 				url: "php/send_ids.php",
 				data: query,
 				success: function(data) {
+
 					vids = $.makeArray(JSON.parse(data));
 					selection = 0;
 
