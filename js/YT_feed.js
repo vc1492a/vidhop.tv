@@ -70,7 +70,8 @@ $(document).ready(function() {
 		width: '640',
 		videoId: vids[selection], //this line throws an error in Chrome: "cannot read property '0' of undefined". Works pretty well in Firefox and Safari.
 		playerVars: {autoplay: 1,fs: 1,modestbranding: 1},
-		events: {'onStateChange': onPlayerStateChange}
+		events: {'onStateChange': onPlayerStateChange},
+		playsinline: 1
 	    });
 	
 		//Play next vid ID on list after vid ends
